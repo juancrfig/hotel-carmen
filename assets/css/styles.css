@@ -8,6 +8,20 @@
     --sunset: hsla(35, 89%, 83%, 1);
 }
 
+/*|-------------------------|*/
+/*|        ANIMATIONS       |*/
+/*|-------------------------|*/
+
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 body {
     font-family: 'Chakra Petch';
     text-align: center;
@@ -18,7 +32,7 @@ body {
     left: 4%;
     bottom: 3.5%;
     font-size: 2.5rem;
-    color: var(--black);
+    color: rgb(45, 126, 45);
 }
 
 
@@ -51,8 +65,8 @@ body {
 .nav-menu {
   position: fixed;
   top: 0;
-  right: -55%; /* Start hidden off-screen */
-  width: 55%;
+  right: -65%; /* Start hidden off-screen */
+  width: 65%;
   height: 100vh;
   background: hsl( 0 0% 100% / .1);
   backdrop-filter: blur(.25rem);
@@ -103,7 +117,7 @@ body {
 
 .user-section {
     margin-top: 1em;
-    padding: 3em;
+    padding: 2em;
     text-align: center;
     color: white;
     box-shadow: 0px 0px 20px 1px var(--black);
@@ -118,6 +132,7 @@ body {
     height: 125px;
     margin-top: 1em;
     border-radius: 100%;
+    box-shadow: 0px 0px 20px 5px var(--black);
 }
 
 #button-log-out {
@@ -160,8 +175,9 @@ body {
 #inicio p:last-child {
     text-align: center;
     color: white;
-    margin-top: 20.8em;
+    margin-top: 22em;
     font-size: 1.25rem;
+    font-weight: 600;
 }
 
 
@@ -170,9 +186,40 @@ body {
 /*|---------------------------------------------------------------|*/
 
 #rooms-services {
-    height: 100vh;
-    background: linear-gradient( #31251B, var(--beaver)) ;
+    height: fit-content;
+    background: linear-gradient( var(--sunset), var(--beaver) ) ;
     border-top: 10px solid var(--black);
     padding-top: 4em;
-    color: var(--black);
+    padding-bottom: 3em;
+    color: black;
+}
+
+/* GALLERY */
+
+.gallery-container {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    overflow: hidden;
+    width: 100%;
+    height: 320px;
+    position: relative;
+}
+
+.gallery {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    animation: scroll 20s linear infinite;
+}
+
+.gallery img {
+    height: 320px;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px var(--black);
+    border: 2px solid black;
+}
+
+.gallery-wrapper {
+    display: flex;
 }
