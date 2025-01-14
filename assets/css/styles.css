@@ -30,7 +30,7 @@ body {
 #whatsapp-icon {
     position: fixed;
     left: 4%;
-    bottom: 3.5%;
+    bottom: 3%;
     font-size: 2.5rem;
     color: rgb(45, 126, 45);
 }
@@ -175,7 +175,7 @@ body {
 #inicio p:last-child {
     text-align: center;
     color: white;
-    margin-top: 22em;
+    margin-top: 120%;
     font-size: 1.25rem;
     font-weight: 600;
 }
@@ -187,11 +187,11 @@ body {
 
 #rooms-services {
     height: fit-content;
-    background: linear-gradient( var(--sunset), var(--beaver) ) ;
-    border-top: 10px solid var(--black);
+    background-image: url('../media/wallpaper-bedrooms-section.jpg');
     padding-top: 4em;
     padding-bottom: 3em;
-    color: black;
+    color: white;
+    border-top: 5px solid white;
 }
 
 /* GALLERY */
