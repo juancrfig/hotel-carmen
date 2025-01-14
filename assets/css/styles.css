@@ -10,10 +10,23 @@ body {
     font-family: Lora;
 }
 
+
+/*|---------------------------------------------------------------|*/
+/*|                       WELCOME SECTION                         |*/
+/*|---------------------------------------------------------------|*/
+
 #welcome {
     height: 100vh;
     background-image: url('../media/hotel-exterior-night.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+#whatsapp-icon {
+    position: fixed;
+    left: 3%;
+    bottom: 2%;
+    font-size: 2.5rem;
+    color: var(--cool-gray);
 }
