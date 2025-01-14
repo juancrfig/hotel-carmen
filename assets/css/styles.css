@@ -1,13 +1,15 @@
 :root {
-    --raisin-black: hsla(270, 15%, 11%, 1);
-    --van-dyke: hsla(351, 25%, 20%, 1);
-    --carolina-blue: hsla(198, 31%, 66%, 1);
-    --saffron: hsla(43, 93%, 60%, 1);
-    --mint-cream: hsla(146, 100%, 99%, 1);
+    --black: hsla(20, 100%, 1%, 1);
+    --raw-umber: hsla(25, 55%, 40%, 1);
+    --bistre: hsla(27, 25%, 16%, 1);
+    --coffee: hsla(24, 36%, 29%, 1);
+    --bistre-2: hsla(20, 58%, 14%, 1);
+    --beaver: hsla(29, 12%, 49%, 1);
+    --sunset: hsla(35, 89%, 83%, 1);
 }
 
 body {
-    font-family: Lora;
+    font-family: 'Space Mono';
     text-align: center;
 }
 
@@ -16,7 +18,7 @@ body {
     left: 3%;
     bottom: 2%;
     font-size: 2.5rem;
-    color: var(--raisin-black);
+    color: var(--black);
 }
 
 
@@ -78,9 +80,7 @@ body {
 .nav-menu ul li a {
   color: white;
   text-decoration: none;
-  font-size: 1.2em;
-  text-shadow: 0px 0px 15px var(--saffron);
-  
+  font-size: 1.3em;
 }
 
 /* Overlay when menu is active */
@@ -102,17 +102,16 @@ body {
 /* USER SECTION */
 
 .user-section {
-    margin-top: 4em;
+    margin-top: 1em;
     padding: 1em;
     text-align: center;
     color: white;
-    box-shadow: 0px 0px 20px 5px var(--raisin-black);
+    box-shadow: 0px 0px 20px 1px var(--black);
     border-radius: 15px;
 }
 
 #user-section-username {
-    font-size: 1.25rem;
-    text-shadow: 0px 0px 10px var(--carolina-blue);
+    font-size: 1.2rem;
 }
 
 #user-section-user-pic {
@@ -124,9 +123,8 @@ body {
 #button-log-out {
     background-color: var(--eerie-black);
     color: white;
-    margin-top: 1.5em;
-    padding: .8em 1em;
-    font-size: 1rem;
+    margin-top: 1em;
+    font-size: 1.6rem;
     border-radius: 50px;
     border: none;
 }
@@ -141,11 +139,11 @@ body {
 
 #inicio {
     height: 100vh;
-    background-image: url('../media/hotel-landing-space-view.jpg');
+    background-image: url('../media/landing-dune-style-image.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 7.25em;
+    padding-top: 1.7em;
 }
 
 #inicio h1 {
