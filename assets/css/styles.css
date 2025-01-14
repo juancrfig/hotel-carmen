@@ -10,23 +10,106 @@ body {
     font-family: Lora;
 }
 
-
-/*|---------------------------------------------------------------|*/
-/*|                       WELCOME SECTION                         |*/
-/*|---------------------------------------------------------------|*/
-
-#welcome {
-    height: 100vh;
-    background-image: url('../media/hotel-exterior-night.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
 #whatsapp-icon {
     position: fixed;
     left: 3%;
     bottom: 2%;
     font-size: 2.5rem;
     color: var(--cool-gray);
+}
+
+
+/*|---------------------------------------------------------------|*/
+/*|                           NAV MENU                            |*/
+/*|---------------------------------------------------------------|*/
+
+.nav-button {
+    position: fixed;
+    top: 1px;
+    right: 1px;
+    font-size: 1.5rem;
+    z-index: 1000;
+    padding: 10px;
+    background: inherit;
+    color: var(--eerie-black);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 5px;
+    padding-bottom: .8em;
+    padding-left: .5em;
+    border-top: none;
+    border-right: none;
+    background: hsl( 0 0% 100% / .2);
+    border: 2px solid var(--glaucous);
+    backdrop-filter: blur(2rem);
+  }
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -50%; /* Start hidden off-screen */
+  width: 50%;
+  height: 100vh;
+  background: hsl( 0 0% 100% / .1);
+  backdrop-filter: blur(.25rem);
+  transition: right 0.4s ease-in-out;
+  padding: 60px 20px 20px;
+  z-index: 999;
+}
+
+.nav-menu.active {
+  right: 0; /* Slide in */
+}
+
+.nav-menu ul {
+  list-style: none;
+}
+
+.nav-menu ul li {
+  margin: 20px 0;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+/* Overlay when menu is active */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 998;
+  }
+
+.overlay.active {
+  display: block;
+}
+
+
+/*|---------------------------------------------------------------|*/
+/*|                       WELCOME SECTION                         |*/
+/*|---------------------------------------------------------------|*/
+
+#inicio {
+    height: 100vh;
+    background-image: url('../media/hotel-exterior-night.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: .001em;
+}
+
+#inicio h1 {
+    font-size: 2.25rem;
+    color: var(--eerie-black);
+    text-align: center;
+    margin-top: 1.6em;
 }
