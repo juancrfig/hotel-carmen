@@ -1,0 +1,19 @@
+:root {
+    --raisin-black: hsla(219, 24%, 14%, 1);
+    --glaucous: hsla(222, 55%, 61%, 1);
+    --vista-blue: hsla(218, 63%, 71%, 1);
+    --eerie-black: hsla(192, 20%, 10%, 1);
+    --cool-gray: hsla(250, 22%, 62%, 1);
+}
+
+body {
+    font-family: Lora;
+}
+
+#welcome {
+    height: 100vh;
+    background-image: url('../media/hotel-exterior-night.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
