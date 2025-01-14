@@ -42,15 +42,14 @@ body {
     border-top: none;
     border-right: none;
     background: hsl( 0 0% 100% / .2);
-    border: 2px solid var(--glaucous);
     backdrop-filter: blur(2rem);
   }
 
 .nav-menu {
   position: fixed;
   top: 0;
-  right: -50%; /* Start hidden off-screen */
-  width: 50%;
+  right: -55%; /* Start hidden off-screen */
+  width: 55%;
   height: 100vh;
   background: hsl( 0 0% 100% / .1);
   backdrop-filter: blur(.25rem);
@@ -61,6 +60,10 @@ body {
 
 .nav-menu.active {
   right: 0; /* Slide in */
+}
+
+.nav-menu ul {
+    margin-top: 5em;
 }
 
 .nav-menu ul {
@@ -93,6 +96,40 @@ body {
   display: block;
 }
 
+/* USER SECTION */
+
+.user-section {
+    margin-top: 4em;
+    padding: 1em;
+    text-align: center;
+    color: white;
+    box-shadow: 0px 0px 20px 5px var(--raisin-black);
+    border-radius: 15px;
+}
+
+#user-section-username {
+    font-size: 1.25rem;
+}
+
+#user-section-user-pic {
+    height: 125px;
+    margin-top: 1em;
+    border-radius: 100%;
+}
+
+#button-log-out {
+    background-color: var(--eerie-black);
+    color: white;
+    margin-top: 1.5em;
+    padding: .8em 1em;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+}
+
+#button-log-out:hover {
+    cursor: pointer;
+}
 
 /*|---------------------------------------------------------------|*/
 /*|                       WELCOME SECTION                         |*/
