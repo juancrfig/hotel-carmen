@@ -30,9 +30,10 @@ body {
 #whatsapp-icon {
     position: fixed;
     left: 4%;
-    bottom: 3%;
+    bottom: 1%;
     font-size: 2.5rem;
     color: rgb(45, 126, 45);
+    text-shadow: 0px 0px 3px black;
 }
 
 
@@ -42,7 +43,7 @@ body {
 
 .nav-button {
     position: fixed;
-    top: -22px;
+    top: -25px;
     right: -15px;
     font-size: 1.5rem;
     z-index: 1000;
@@ -52,11 +53,11 @@ body {
     border: none;
     cursor: pointer;
     padding: 1em;
-    padding-top: 1.2em;
+    padding-top: 1.5em;
     border-bottom-left-radius: 50px;
     border-top: none;
     border-right: none;
-    background: hsl( 0 0% 100% / .2);
+    background: hsl( 0 0% 100% / .25);
     backdrop-filter: blur(2rem);
   }
 
@@ -142,21 +143,18 @@ body {
     border: none;
 }
 
-#button-log-out:hover {
-    cursor: pointer;
-}
-
 /*|---------------------------------------------------------------|*/
 /*|                       WELCOME SECTION                         |*/
 /*|---------------------------------------------------------------|*/
 
 #inicio {
-    height: 100vh;
-    background-image: url('../media/landing-dune-style-image.webp');
+    height: 100%;
+    min-height: 100%;
+    background-image: url('../media/backgrounds/landing-dune-style-image.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    padding-top: 2.25em;
+    padding: 3.5em 2em;
 }
 
 #inicio h1 {
@@ -164,18 +162,13 @@ body {
     color: var(--eerie-black);
 }
 
-#inicio h1 + p {
-    font-style: italic;
-    font-size: .9rem;
-    font-weight: 600;
-}
-
 #inicio p:last-child {
     text-align: center;
     color: white;
-    margin-top: 120%;
-    font-size: 1.25rem;
+    margin-top: 465px;
+    font-size: .9rem;
     font-weight: 600;
+    text-shadow: 0px 0px 5px black;
 }
 
 
@@ -183,18 +176,18 @@ body {
 /*|                        ROOMS SECTION                          |*/
 /*|---------------------------------------------------------------|*/
 
-#rooms-services {
-    height: fit-content;
-    background-image: url('../media/wallpaper-bedrooms-section.jpg');
+/* #rooms-services {
+    height: 100vh;
+    background-image: url('../media/light-background.jpg');
+    background-position: center;
     padding-top: 4em;
     padding-bottom: 3em;
     color: white;
-    border-top: 5px solid white;
-}
+} */
 
 /* GALLERY */
 
-.gallery-container {
+/* .gallery-container {
     margin-top: 3em;
     margin-bottom: 3em;
     overflow: hidden;
@@ -220,4 +213,4 @@ body {
 
 .gallery-wrapper {
     display: flex;
-}
+} */

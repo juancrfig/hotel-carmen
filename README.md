@@ -25,9 +25,9 @@
 
 ### Funcionalidades
 
-- [ ] Agregar un **botón de comunicación por WhatsApp** en todas las páginas:
-  - [ ] El botón debe flotar verticalmente en el lado izquierdo y ser visible mientras el usuario navega por el sitio.
-  - [ ] Al hacer clic en el botón, debe abrir una nueva pestaña con WhatsApp para comunicarse con el hotel.
+- [X] Agregar un **botón de comunicación por WhatsApp** en todas las páginas:
+  - [X] El botón debe flotar verticalmente en el lado izquierdo y ser visible mientras el usuario navega por el sitio.
+  - [X] Al hacer clic en el botón, debe abrir una nueva pestaña con WhatsApp para comunicarse con el hotel.
 
 - **Reservas y Gestión de Habitaciones**:
   - [ ] Permitir que solo los **usuarios registrados** puedan hacer y cancelar reservas.
