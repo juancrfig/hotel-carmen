@@ -276,3 +276,64 @@ button {
 /*|---------------------------------------------------------------|*/
 /*|                        ROOMS SECTION                          |*/
 /*|---------------------------------------------------------------|*/
+
+#rooms-services {
+    height: 100vh;
+    background-image: url('../media/backgrounds/stars-background-phone.jpg');
+    background-size: cover;
+    padding-top: 5em;
+    z-index: -1;
+    color: white;
+    font-style: italic;
+}
+
+.gallery-container {
+    position: relative; /* Add this */
+    width: 300px;
+    height: 400px;
+    margin: 3em auto;
+    overflow: hidden;
+    z-index: 2; /* Add this */
+}
+
+.gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery img {
+    display: block;
+    width: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 40px;
+    background: hsl( 0 0% 100% / .1);
+    backdrop-filter: blur(1rem);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 25px;
+    z-index: 100; /* Increased z-index */
+    border: none;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}

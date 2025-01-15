@@ -53,3 +53,27 @@ window.addEventListener('click', (event) => {
     logInmodal.style.display = 'none';
   }
 })
+
+
+
+// GALLERY
+
+const gallery = document.querySelector('.gallery');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const imageCount = document.querySelectorAll('.gallery img').length;
+        let currentIndex = 0;
+
+        function updateGallery() {
+            gallery.style.transform = `translateX(-${currentIndex * 300}px)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+            updateGallery();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % imageCount;
+            updateGallery();
+        });
