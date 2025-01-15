@@ -31,18 +31,29 @@
         
         <nav class="nav-menu">
             <div class="user-section">
-                <p id="user-section-username">Juan Figueroa</p>
-                <img id="user-section-user-pic" src="./assets/media/mcloving.jpg">
-                <button id="button-log-out"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <p id="user-section-username" class="openModalSignUp">Registrarse</p>
+                <img id="user-section-user-pic" src="./assets/media/default-profile-pic-astronaut.jpg">
+                <button class="disabled" id="button-log-out"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <p id="texto-inferior">Iniciar Sesión</p>
             </div>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#reservas">Reservas</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
+     
         </nav>
     </header>
     <main>
+        <div id="modal" class="modal-overlay">
+            <div class="modal-content">
+                <i class="fa-solid fa-xmark close-btn"></i>
+              <h2>Nuevo Usuario</h2>
+              <input type="text" class="sign-up-user" placeholder="Usuario">
+              <input type="password" class="sign-up-pass" placeholder="Clave">
+              <button id="sign-up-btn">Enviar</button>
+            </div>
+          </div>
         <section id="inicio"> 
             <h1>Hotel Camila</h1>
             <p>Una experiencia única entre las estrellas. Lujo y confort con vistas panorámicas al cosmos.</p>
