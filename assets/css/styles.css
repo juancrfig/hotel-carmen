@@ -120,7 +120,7 @@ button {
 
 .nav-button {
     position: fixed;
-    top: -25px;
+    top: -45px;
     right: -15px;
     font-size: 1.5rem;
     z-index: 1000;
@@ -147,7 +147,7 @@ button {
   background: hsl( 0 0% 100% / .1);
   backdrop-filter: blur(.25rem);
   transition: right 0.4s ease-in-out;
-  padding: 60px 20px 20px;
+  padding: 60px 30px 20px;
   z-index: 999;
 }
 
@@ -192,8 +192,8 @@ button {
 /* USER SECTION */
 
 .user-section {
-    margin-top: 1em;
-    padding: 2em;
+    margin-top: 3em;
+    padding: 1em;
     text-align: center;
     color: white;
     box-shadow: 0px 0px 20px 1px var(--black);
@@ -252,9 +252,13 @@ button {
 }
 
 #inicio p:last-child {
-    text-align: center;
+    position: absolute;
+    bottom: 10vh;
+    max-width: 500px;
+    display: block;
+    width: 85vw;
+    margin: auto;
     color: white;
-    margin-top: 440px;
     font-size: .9rem;
     font-weight: 600;
     text-shadow: 0px 0px 6px black;
@@ -264,42 +268,3 @@ button {
 /*|---------------------------------------------------------------|*/
 /*|                        ROOMS SECTION                          |*/
 /*|---------------------------------------------------------------|*/
-
-/* #rooms-services {
-    height: 100vh;
-    background-image: url('../media/light-background.jpg');
-    background-position: center;
-    padding-top: 4em;
-    padding-bottom: 3em;
-    color: white;
-} */
-
-/* GALLERY */
-
-/* .gallery-container {
-    margin-top: 3em;
-    margin-bottom: 3em;
-    overflow: hidden;
-    width: 100%;
-    height: 320px;
-    position: relative;
-}
-
-.gallery {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    animation: scroll 20s linear infinite;
-}
-
-.gallery img {
-    height: 320px;
-    margin: 0 10px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 1px var(--black);
-    border: 2px solid black;
-}
-
-.gallery-wrapper {
-    display: flex;
-} */

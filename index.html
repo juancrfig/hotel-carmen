@@ -19,6 +19,7 @@
 
     <!-- SCRIPTS -->
     <script src="./assets/js/script.js" defer></script>
+    <script src="./assets/js/serverInteraction.js" defer></script>
 
     <meta name="description" content="Experimente la tranquilidad y la belleza natural de la Patagonia argentina en el Hotel Camila. Enclavado en una serena zona boscosa, nuestro hotel ofrece un alojamiento acogedor, vistas impresionantes y una hospitalidad excepcional. Perfecto para los amantes de la naturaleza, los aventureros y los que buscan una escapada tranquila.">
     <title>Hotel Camila</title>
@@ -45,13 +46,13 @@
         </nav>
     </header>
     <main>
-        <div id="modal" class="modal-overlay">
+        <div id="modalSignUp" class="modal-overlay">
             <div class="modal-content">
                 <i class="fa-solid fa-xmark close-btn"></i>
-              <h2>Nuevo Usuario</h2>
-              <input type="text" class="sign-up-user" placeholder="Usuario">
-              <input type="password" class="sign-up-pass" placeholder="Clave">
-              <button id="sign-up-btn">Enviar</button>
+                <h2>Nuevo Usuario</h2>
+                <input type="text" class="sign-up-user" placeholder="Usuario" required maxlength="10" minlength="5">
+                <input type="password" class="sign-up-pass" placeholder="Clave" required maxlength="10" minlength="5">
+                <button id="sign-up-btn">Enviar</button>
             </div>
           </div>
         <section id="inicio"> 
