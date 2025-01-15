@@ -42,8 +42,8 @@ body {
 
 .nav-button {
     position: fixed;
-    top: 1px;
-    right: 1px;
+    top: -22px;
+    right: -15px;
     font-size: 1.5rem;
     z-index: 1000;
     padding: 10px;
@@ -51,11 +51,9 @@ body {
     color: var(--mint-cream);
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    padding: 1em;
+    padding-top: 1.2em;
     border-bottom-left-radius: 50px;
-    border-top-left-radius: 5px;
-    padding-bottom: .8em;
-    padding-left: .5em;
     border-top: none;
     border-right: none;
     background: hsl( 0 0% 100% / .2);
@@ -168,7 +166,7 @@ body {
 
 #inicio h1 + p {
     font-style: italic;
-    font-size: 1.25rem;
+    font-size: .9rem;
     font-weight: 600;
 }
 

@@ -10,7 +10,7 @@ requerimientos que se espera que el sitio web cumpla como mínimo.
 
 ## Requerimientos
 
-1. El sitio web debe ser sencillo, agradable, funcional que atraiga visualmente a los
+- [ ] El sitio web debe ser sencillo, agradable, funcional que atraiga visualmente a los
 clientes y lo invite a revisar y apartar habitaciones del hotel.
 2. Los clientes revisarán las instalaciones del hotel principalmente en su dispositivo
 móvil
@@ -51,7 +51,7 @@ uso ya que los usuarios lo harán desde el móvil mayormente.
 12. La página web debe verse de forma agradable, sencilla y ágil en otros tipos de
 dispositivos diferentes a los móviles.
 13. Se usará json-server como servidor de persistencia de la información
-14. La versión del sitio web que desarrollará deberá ser gestionada en GitHub y
+- [ ] La versión del sitio web que desarrollará deberá ser gestionada en GitHub y
 desplegada en GitHub page
 15. Puede agregar otras funcionalidades que enriquezcan el sistema sin que compita o
 interrumpa con los otros requerimientos consignados en este documento.
