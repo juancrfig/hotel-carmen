@@ -8,11 +8,14 @@
     --sunset: hsla(35, 89%, 83%, 1);
 }
 
-main {
-    height: 100vh;
+body {
     background-image: url('../media/backgrounds/contact-wallpaper-phone.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+main {
+    height: 100vh;
     display: grid;
     color: var(--sunset);
     font-family: Orbitron;
@@ -46,6 +49,7 @@ label {
     border-radius: 50px;
     justify-self: center;
     padding: 2em 4em;
+    min-height: 450px;
 }
 
 input {
@@ -57,10 +61,16 @@ input {
     max-width: 200px;
     padding: .25em;
     margin: .7em 0;
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 #big-input {
     height: 180px;
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 1em;
+    margin-top: .5em;
 }
 
 button {
@@ -76,4 +86,24 @@ button {
 
 button:active {
     scale: .9;
+}
+
+footer {
+    min-height: 100px;
+    background: hsl( 0 0% 100% / .01);
+    backdrop-filter: blur(.25rem);
+    border-top: 2px solid var(--sunset);
+    color: whitesmoke;
+    padding: 1em;
+    display: flex;
+    justify-content: space-around;
+}
+
+p {
+    font-size: 1rem;
+}
+
+img {
+    display: block;
+    width: 100px;
 }
