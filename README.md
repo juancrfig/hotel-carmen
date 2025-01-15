@@ -20,8 +20,8 @@
       - [ ] Precio total y fechas disponibles.
     - [ ] Permitir a los usuarios reservar habitaciones si están satisfechos con los detalles.
   - **Página de Contacto**:
-    - [ ] Incluir la ubicación y la información de contacto del hotel.
-    - [ ] Proveer diferentes formas para que los usuarios se comuniquen con el hotel (teléfono, correo electrónico, etc.).
+    - [X] Incluir la ubicación y la información de contacto del hotel.
+    - [X] Proveer diferentes formas para que los usuarios se comuniquen con el hotel (teléfono, correo electrónico, etc.).
 
 ### Funcionalidades
 
