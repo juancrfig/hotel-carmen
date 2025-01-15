@@ -34,3 +34,22 @@ window.addEventListener('click', (event) => {
     modal.style.display = 'none';
   }
 });
+
+
+const logInmodal = document.getElementById('modalLogIn')
+const openLogInModalBtn = document.querySelector('.openModalLogIn');
+const closeLogInBtn = document.querySelector('.close-log-btn');
+
+openLogInModalBtn.addEventListener('click', () => {
+  logInmodal.style.display = 'flex';
+});
+
+closeLogInBtn.addEventListener('click', () => {
+  logInmodal.style.display = 'none';
+});
+
+window.addEventListener('click', (event) => {
+  if (event.target === logInmodal) {
+    logInmodal.style.display = 'none';
+  }
+})

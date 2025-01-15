@@ -35,7 +35,7 @@
                 <p id="user-section-username" class="openModalSignUp">Registrarse</p>
                 <img id="user-section-user-pic" src="./assets/media/default-profile-pic-astronaut.jpg">
                 <button class="disabled" id="button-log-out"><i class="fa-solid fa-right-from-bracket"></i></button>
-                <p id="texto-inferior">Iniciar Sesión</p>
+                <p id="texto-inferior" class="openModalLogIn">Iniciar Sesión</p>
             </div>
           <ul>
             <li><a href="#inicio">Inicio</a></li>
@@ -54,36 +54,21 @@
                 <input type="password" class="sign-up-pass" placeholder="Clave" required maxlength="10" minlength="5">
                 <button id="sign-up-btn">Enviar</button>
             </div>
-          </div>
+        </div>
+        <div id="modalLogIn" class="modal-overlay">
+            <div class="modal-content">
+                <i class="fa-solid fa-xmark close-log-btn"></i>
+                <h2>Iniciar Sesión</h2>
+                <input type="text" class="log-in-user" placeholder="Usuario" required maxlength="10" minlength="5">
+                <input type="password" class="log-in-pass" placeholder="Clave" required maxlength="10" minlength="5">
+                <button id="log-in-btn">Enviar</button>
+            </div>
+        </div>
         <section id="inicio"> 
             <h1>Hotel Camila</h1>
             <p>Una experiencia única entre las estrellas. Lujo y confort con vistas panorámicas al cosmos.</p>
         </section>
-        <section id="rooms-services">
-            <!-- <div class="gallery-container">
-                <div class="gallery-wrapper">
-                    <div class="gallery">
-                        <img src="./assets/media/bedrooms/suite.jpg" alt="Image 4">
-                        <img src="./assets/media/bedrooms/blue-bedroom.jpg" alt="Image 4">
-                        <img src="./assets/media/bedrooms/ample-white-room.jpeg" alt="Image 1">
-                        <img src="./assets/media/bedrooms/green-space-bedroom.jpg" alt="Image 5">
-                        <img src="./assets/media/bedrooms/cozy-dark-bedroom.jpg" alt="Image 2">
-                        <img src="./assets/media/bedrooms/small-white-room.jpeg" alt="Image 3">
-                        <img src="./assets/media/bedrooms/white-room.jpeg" alt="Image 4">
-                    </div>
-                </div>
-            </div>
-            <h2>Premium</h2>
-            <div class="gallery-container">
-                <div class="gallery-wrapper">
-                    <div class="gallery">
-                        <img src="./assets/media/services/captain-starship-quarters.jpg" alt="Image 2">
-                        <img src="./assets/media/services/deepspace-balcony.jpg" alt="Image 3">
-                        <img src="./assets/media/services/luxury-poolside.jpg" alt="Image 4">
-                    </div>
-                </div>
-            </div> -->
-        </section>
+        <section id="rooms-services"></section>
         <a href="https://api.whatsapp.com/send/?phone=573154002646&text=Hello%21+I+would+like+more+information+about+your+hotel.&type=phone_number&app_absent=0"><i id="whatsapp-icon" class="fa-brands fa-whatsapp"></i></a>
     </main>
 </body>

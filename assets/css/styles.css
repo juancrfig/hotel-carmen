@@ -101,6 +101,14 @@ body {
     font-size: 2rem;
     cursor: pointer;
 }
+
+.close-log-btn {
+    position: relative;
+    top: -10px;
+    right: -120px;
+    font-size: 2rem;
+    cursor: pointer;    
+}
   
   /* Button Styling */
 button {
@@ -156,7 +164,7 @@ button {
 }
 
 .nav-menu ul {
-    margin-top: 5em;
+    margin-top: 4em;
 }
 
 .nav-menu ul {
@@ -192,7 +200,7 @@ button {
 /* USER SECTION */
 
 .user-section {
-    margin-top: 3em;
+    margin-top: 2em;
     padding: 1em;
     text-align: center;
     color: white;
@@ -253,7 +261,7 @@ button {
 
 #inicio p:last-child {
     position: absolute;
-    bottom: 10vh;
+    bottom: 7vh;
     max-width: 500px;
     display: block;
     width: 85vw;
