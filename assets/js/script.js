@@ -77,3 +77,24 @@ const gallery = document.querySelector('.gallery');
             currentIndex = (currentIndex + 1) % imageCount;
             updateGallery();
         });
+
+
+const galleryTwo = document.querySelector('.galleryTwo');
+        const prevBtnTwo = document.querySelector('.prevTwo');
+        const nextBtnTwo = document.querySelector('.nextTwo');
+        const imageCountTwo = document.querySelectorAll('.img-galleryTwo').length;
+        let currentIndexTwo = 0;
+
+        function updateGallery() {
+            galleryTwo.style.transform = `translateX(-${currentIndexTwo * 300}px)`;
+        }
+
+        prevBtnTwo.addEventListener('click', () => {
+            currentIndexTwo = (currentIndexTwo - 1 + imageCountTwo) % imageCountTwo;
+            updateGallery();
+        });
+
+        nextBtnTwo.addEventListener('click', () => {
+            currentIndexTwo = (currentIndexTwo + 1) % imageCountTwo;
+            updateGallery();
+        });
