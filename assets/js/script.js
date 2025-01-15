@@ -61,21 +61,21 @@ window.addEventListener('click', (event) => {
 const gallery = document.querySelector('.gallery');
         const prevBtn = document.querySelector('.prev');
         const nextBtn = document.querySelector('.next');
-        const imageCount = document.querySelectorAll('.gallery img').length;
+        const imageCount = document.querySelectorAll('.img-gallery').length;
         let currentIndex = 0;
 
-        function updateGallery() {
+        function updateGalleryOne() {
             gallery.style.transform = `translateX(-${currentIndex * 300}px)`;
         }
 
         prevBtn.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + imageCount) % imageCount;
-            updateGallery();
+            updateGalleryOne();
         });
 
         nextBtn.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % imageCount;
-            updateGallery();
+            updateGalleryOne();
         });
 
 
