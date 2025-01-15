@@ -13,10 +13,67 @@ main {
     background-image: url('../media/backgrounds/contact-wallpaper-phone.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    display: grid;
+    color: var(--sunset);
+    font-family: Orbitron;
+    padding-bottom: 2em;
+}
+
+h1,
+label {
+    text-align: center;
+    text-shadow: 0px 0px 8px black;
+}
+
+label {
+    font-size: 1.1rem;
 }
 
 .comeback-home {
     color: var(--sunset);
     font-size: 1.25rem;
     margin: 1em;
+}
+
+
+.container {
+    height: 70vh;
+    width: 70vw;
+    min-width: 320px;
+    max-width: 350px;
+    background: hsl( 0 0% 100% / .1);
+    backdrop-filter: blur(.25rem);
+    border-radius: 50px;
+    justify-self: center;
+    padding: 2em 4em;
+}
+
+input {
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    text-align: center;
+    width: 180px;
+    max-width: 200px;
+    padding: .25em;
+    margin: .7em 0;
+}
+
+#big-input {
+    height: 180px;
+}
+
+button {
+    width: 100px;
+    padding: .6em;
+    border-radius: 5px;
+    background-color: var(--sunset);
+    border: none;
+    display: block;
+    margin: 1em auto;
+    transition: scale 100ms ease-in-out;
+}
+
+button:active {
+    scale: .9;
 }
