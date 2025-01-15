@@ -1,58 +1,66 @@
-# Hotel el Rincón de Camila
+# Desarrollo del Sitio Web - Hotel El Rincón de Camila
 
-El Hotel el Rincón de Camila desea hacer presencia en la web construyendo un sitio web
-sencillo, agradable y funcional para poder ofrecer sus servicios a un mayor número de
-interesados posibles. Por esto te ha contratado, para que le desarrolles un sitio web,
-pequeño, muy agradable y funcional, que le permita atraer más clientes y gestionar las
-reservas de sus habitaciones.
-Después de varias conversaciones y reuniones se ha levantado el siguiente listado de
-requerimientos que se espera que el sitio web cumpla como mínimo.
+**Hotel El Rincón de Camila** está construyendo un sitio web sencillo, agradable y funcional para atraer más clientes y gestionar las reservas de sus habitaciones. Tu tarea es desarrollar un sitio web pequeño, amigable y visualmente atractivo que cumpla con los siguientes requisitos:
 
-## Requerimientos
+## Requerimientos del Proyecto
 
-- [ ] El sitio web debe ser sencillo, agradable, funcional que atraiga visualmente a los
-clientes y lo invite a revisar y apartar habitaciones del hotel.
-2. Los clientes revisarán las instalaciones del hotel principalmente en su dispositivo
-móvil
-3. El sitio web debe tener al menor 3 páginas. La primera, un a página de inicio, que será
-de tipo landing page, agradable, con elementos como carrusel de habitaciones, áreas
-del hotel y muestras fotográficas de los servicios como comidas, spa y zonas
-húmedas. La segunda, una página donde se pueda consultar la disponibilidad y
-gestionar las reservas. La tercera, una página con la ubicación, dirección y diferentes
-formas de contactarse.
-4. En todas las páginas aparecerá un botón de comunicación vía WhatsApp que se
-desplazará verticalmente al lado inferior izquierdo a medida que el usuario navegue
-en la aplicación. Este botón deberá ser funcional en todas las páginas y al hacer clic
-abrirá otra pestaña con las acciones para comunicarse por WhatsApp con el hotel.
-5. En la página de consulta de disponibilidad el usuario podrá ingresar las fechas de
-interés, cuantas personas se van a hospedar y el sistema arrojara las habitaciones
-disponibles que estén de acuerdo a los filtros con el valor total correspondientes a las
-noches y personas que tomarán el servicio.
-El usuario podrá revisar cualquiera de las ubicaciones disponibles; en estas podrá
-observar la cantidad camas y otros servicios que se incluyen dentro de la habitación
-como: internet, minibar, jacusi, entre otros. En estos detalles, el usuario podrá ver de
-forma muy clara el valor del precio, el rango de fecha disponibles y la cantidad de
-personas que incluye la reserva. Si el usuario está a gusto podrá hacer la reserva
-haciendo clic al botón que le permita apartar dicha habitación.
-6. Solo los usuarios registrados en el sitio web podrán hacer reservas o cancelación de
-disponibilidad.
-7. La hora de check in a las habitaciones será a las 14:00 del día. Si el usuario no hace
-efectiva la reserva dos horas después de que inicie el check in (16:00) la habitación
-quedará disponible para que otra persona la pueda tomar. Esta información debe
-quedar consignado muy claramente al momento de hacer la reserva para que usuario esté enterado y acepte estas políticas, así como otras que el hotel bien pueda
-tener en el futuro.
-8. Después de hacer clic al botón de reserva y antes de consignarse la reserva en la base
-de datos, el sistema debe verificar que siga existiendo la disponibilidad. Si es así, hará
-efectivo el debido registro, si no, se le informará al usuario que ya no está disponible.
-9. Una vez el usuario esté registrado podrá hacer reserva o cancelar una reserva por el sistema.
-10. El sistema debe contar con un procedimiento fácil y ágil de cancelación de reserva.
-11. La búsqueda de disponibilidades, selección de la opción y reserva deben ser de fácil
-uso ya que los usuarios lo harán desde el móvil mayormente.
-12. La página web debe verse de forma agradable, sencilla y ágil en otros tipos de
-dispositivos diferentes a los móviles.
-13. Se usará json-server como servidor de persistencia de la información
-- [ ] La versión del sitio web que desarrollará deberá ser gestionada en GitHub y
-desplegada en GitHub page
-15. Puede agregar otras funcionalidades que enriquezcan el sistema sin que compita o
-interrumpa con los otros requerimientos consignados en este documento.
+### Requerimientos Generales del Sitio Web
 
+- [ ] Crear un sitio web visualmente atractivo, sencillo y funcional.
+- [ ] Diseñar con enfoque **mobile-first**, ya que la mayoría de los usuarios accederán al sitio desde dispositivos móviles.
+- [ ] Asegurarse de que el sitio contenga al menos 3 páginas:
+  - **Página de Inicio (Landing Page)**:
+    - [ ] Mostrar una página de inicio agradable con elementos como un carrusel de habitaciones, áreas del hotel y fotos de los servicios (comida, spa, zonas húmedas, etc.).
+  - **Página de Consulta de Disponibilidad y Reservas**:
+    - [ ] Los usuarios deben poder consultar la disponibilidad de habitaciones ingresando:
+      - [ ] Fechas de estancia.
+      - [ ] Número de personas.
+    - [ ] Mostrar las habitaciones disponibles según los filtros, incluyendo:
+      - [ ] Detalles de la habitación (número de camas, servicios como internet, minibar, jacuzzi, etc.).
+      - [ ] Precio total y fechas disponibles.
+    - [ ] Permitir a los usuarios reservar habitaciones si están satisfechos con los detalles.
+  - **Página de Contacto**:
+    - [ ] Incluir la ubicación y la información de contacto del hotel.
+    - [ ] Proveer diferentes formas para que los usuarios se comuniquen con el hotel (teléfono, correo electrónico, etc.).
+
+### Funcionalidades
+
+- [ ] Agregar un **botón de comunicación por WhatsApp** en todas las páginas:
+  - [ ] El botón debe flotar verticalmente en el lado izquierdo y ser visible mientras el usuario navega por el sitio.
+  - [ ] Al hacer clic en el botón, debe abrir una nueva pestaña con WhatsApp para comunicarse con el hotel.
+
+- **Reservas y Gestión de Habitaciones**:
+  - [ ] Permitir que solo los **usuarios registrados** puedan hacer y cancelar reservas.
+  - [ ] En la página de reservas, mostrar:
+    - [ ] Habitaciones disponibles que coincidan con los filtros (fechas, número de personas).
+    - [ ] Detalle del precio, incluyendo número de noches y número de personas.
+  - [ ] Mostrar información clara sobre la **hora de check-in** (14:00) y **política de expiración de la reserva** (si la reserva no es efectiva antes de las 16:00, la habitación se liberará).
+  - [ ] Asegurarse de que después de hacer clic en "Reservar", el sistema verifique si la habitación sigue disponible:
+    - [ ] Si está disponible, proceder con la reserva.
+    - [ ] Si no está disponible, notificar al usuario que la habitación ya no está disponible.
+  - [ ] Permitir que los usuarios **cancelen** una reserva de forma sencilla.
+  - [ ] Proveer información clara sobre la **política de cancelación** de reservas del hotel.
+
+### Funcionalidades Adicionales
+
+- [ ] Asegurar que el sitio sea fácil de usar y **responsivo** en todos los dispositivos, no solo móviles.
+- [ ] Proveer una **interfaz intuitiva** y fácil de usar para la búsqueda de disponibilidad y la realización de reservas.
+- [ ] Utilizar **json-server** para la persistencia de datos y el manejo de reservas.
+- [ ] Hospedar y desplegar el sitio web en **GitHub Pages**.
+- [ ] Utilizar **GitHub** para el control de versiones y la gestión del repositorio del proyecto.
+
+### Características Adicionales (Opcionales)
+
+- [ ] Agregar características adicionales que mejoren la experiencia del usuario, sin interferir con las funcionalidades principales (por ejemplo, gestión de cuentas de usuario, galería de detalles de habitaciones).
+
+## Directrices de Desarrollo
+
+- [ ] Mantener el código **simple y bien estructurado**.
+- [ ] Usar **HTML**, **CSS** y **JavaScript** siguiendo las mejores prácticas.
+- [ ] Asegurar que el sitio sea **accesible** y siga las **WCAG** (Web Content Accessibility Guidelines).
+- [ ] Proveer **documentación** y comentarios adecuados en el código para asegurar su mantenibilidad.
+- [ ] Seguir el enfoque **mobile-first** en el diseño y desarrollo del sitio web.
+
+---
+
+Puedes agregar características o mejoras adicionales que estén alineadas con los objetivos del proyecto, asegurando siempre que la experiencia para el usuario sea sencilla y funcional.
