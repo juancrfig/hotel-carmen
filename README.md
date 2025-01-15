@@ -10,7 +10,7 @@
 - [ ] Diseñar con enfoque **mobile-first**, ya que la mayoría de los usuarios accederán al sitio desde dispositivos móviles.
 - [ ] Asegurarse de que el sitio contenga al menos 3 páginas:
   - **Página de Inicio (Landing Page)**:
-    - [ ] Mostrar una página de inicio agradable con elementos como un carrusel de habitaciones, áreas del hotel y fotos de los servicios (comida, spa, zonas húmedas, etc.).
+    - [X] Mostrar una página de inicio agradable con elementos como un carrusel de habitaciones, áreas del hotel y fotos de los servicios (comida, spa, zonas húmedas, etc.).
   - **Página de Consulta de Disponibilidad y Reservas**:
     - [ ] Los usuarios deben poder consultar la disponibilidad de habitaciones ingresando:
       - [ ] Fechas de estancia.
@@ -46,8 +46,8 @@
 - [ ] Asegurar que el sitio sea fácil de usar y **responsivo** en todos los dispositivos, no solo móviles.
 - [ ] Proveer una **interfaz intuitiva** y fácil de usar para la búsqueda de disponibilidad y la realización de reservas.
 - [ ] Utilizar **json-server** para la persistencia de datos y el manejo de reservas.
-- [ ] Hospedar y desplegar el sitio web en **GitHub Pages**.
-- [ ] Utilizar **GitHub** para el control de versiones y la gestión del repositorio del proyecto.
+- [X] Hospedar y desplegar el sitio web en **GitHub Pages**.
+- [X] Utilizar **GitHub** para el control de versiones y la gestión del repositorio del proyecto.
 
 ### Características Adicionales (Opcionales)
 
@@ -59,7 +59,7 @@
 - [ ] Usar **HTML**, **CSS** y **JavaScript** siguiendo las mejores prácticas.
 - [ ] Asegurar que el sitio sea **accesible** y siga las **WCAG** (Web Content Accessibility Guidelines).
 - [ ] Proveer **documentación** y comentarios adecuados en el código para asegurar su mantenibilidad.
-- [ ] Seguir el enfoque **mobile-first** en el diseño y desarrollo del sitio web.
+- [X] Seguir el enfoque **mobile-first** en el diseño y desarrollo del sitio web.
 
 ---
 
