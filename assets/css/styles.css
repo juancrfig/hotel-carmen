@@ -262,6 +262,7 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0 2em;
+    border-bottom: 20px solid black;
 }
 
 #inicio h1 {
@@ -297,7 +298,6 @@ button {
     height: fit-content;
     background-image: url('../media/backgrounds/stars-background-phone.jpg');
     background-size: cover;
-    padding-top: 5em;
     z-index: -1;
     color: white;
     font-style: italic;
@@ -306,9 +306,9 @@ button {
 
 .gallery-container {
     position: relative; /* Add this */
-    width: 300px;
-    height: 400px;
-    margin: 3em auto;
+    width: 100vw;
+    height: 500px;
+    margin: 0 auto;
     overflow: hidden;
     z-index: 2; /* Add this */
     margin-bottom: 4em;
@@ -327,11 +327,11 @@ button {
 .gallery img,
 .galleryTwo img {
     display: block;
-    width: 300px;
+    width: 100vw;
     object-fit: cover;
     flex-shrink: 0;
-    margin: auto;
-    border-radius: 20px;
+    margin: 0 auto;
+    border-radius: 5px;
 }
 
 .arrow,

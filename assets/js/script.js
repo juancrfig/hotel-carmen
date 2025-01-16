@@ -144,8 +144,9 @@ const galleryTwo = document.querySelector('.galleryTwo');
         let currentIndexTwo = 0;
 
         function updateGallery() {
-            galleryTwo.style.transform = `translateX(-${currentIndexTwo * 300}px)`;
-        }
+          const imageWidth = window.innerWidth; // Dynamically get the width of each image in pixels
+          galleryTwo.style.transform = `translateX(-${currentIndexTwo * imageWidth}px)`; // Use px instead of vw
+      }
 
         prevBtnTwo.addEventListener('click', () => {
             currentIndexTwo = (currentIndexTwo - 1 + imageCountTwo) % imageCountTwo;
