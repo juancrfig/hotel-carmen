@@ -76,9 +76,11 @@ const openModalBtn = document.querySelector('.openModalSignUp');
 const closeBtn = document.querySelector('.close-btn');
 
 // Open the modal
-openModalBtn.addEventListener('click', () => {
-  modal.style.display = 'flex'; // Show the modal
-});
+
+function openModalSign() {
+	modal.style.display = 'flex'; //
+}
+openModalBtn.addEventListener('click', openModalSign);
 
 // Close the modal when the "X" button is clicked
 closeBtn.addEventListener('click', () => {
@@ -92,9 +94,11 @@ window.addEventListener('click', (event) => {
   }
 });
 
-openLogInModalBtn.addEventListener('click', () => {
-  logInmodal.style.display = 'flex';
-});
+function openModalLog() {
+	logInmodal.style.display = 'flex';
+
+}
+openLogInModalBtn.addEventListener('click', openModalLog);
 
 closeLogInBtn.addEventListener('click', () => {
   logInmodal.style.display = 'none';
@@ -160,7 +164,6 @@ const galleryTwo = document.querySelector('.galleryTwo');
 //   MAIN
 // ----------------------------------------------------------------
 
-const nameLoggedInUser = '';
 const topTextUserBox = document.querySelector('#user-section-username')
 const bottomTextUserBox = document.querySelector('#texto-inferior')
 
@@ -170,6 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
       
 		topTextUserBox.textContent = 'Hola';
 		bottomTextUserBox.textContent = sessionStorage.getItem('username');
+
+		openModalBtn.removeEventListener('click', openModalSign);
+		openLogInModalBtn.removeEventListener('click', openModalLog);
   	}
 });
 
