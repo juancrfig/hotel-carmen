@@ -262,7 +262,7 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0 2em;
-    border-bottom: 20px solid black;
+    border-bottom: 10px solid var(--sunset);
 }
 
 #inicio h1 {
@@ -311,11 +311,11 @@ button {
     margin: 0 auto;
     overflow: hidden;
     z-index: 2; /* Add this */
-    margin-bottom: 4em;
+    border-bottom: 13px solid var(--sunset);
 }
 
 .gallery-container-two {
-    margin: 1em auto 4em auto;
+    margin: 0 auto 4em auto;
 }
 
 .gallery,

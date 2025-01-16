@@ -123,7 +123,8 @@ const gallery = document.querySelector('.gallery');
         let currentIndex = 0;
 
         function updateGalleryOne() {
-            gallery.style.transform = `translateX(-${currentIndex * 300}px)`;
+          const imageWidth = window.innerWidth; // Dynamically get the width of each image in pixels
+          gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Use px instead of vw
         }
 
         prevBtn.addEventListener('click', () => {
