@@ -1,8 +1,18 @@
+import { addNewUser, logIn } from "./serverInteraction.js";
+
 // NAV MENU 
 
 const navButton = document.querySelector('.nav-button');
 const navMenu = document.querySelector('.nav-menu');
 const overlay = document.querySelector('.overlay');
+
+
+const sendButton = document.getElementById('sign-up-btn');
+const inputSignUpUser = document.querySelector('.sign-up-user');
+const inputSignUpPass = document.querySelector('.sign-up-pass');
+
+const inputLogInUser = document.querySelector('.log-in-user');
+const inputLogInPass = document.querySelector('.log-in-pass');
 
 navButton.addEventListener('click', toggleMenu);
 overlay.addEventListener('click', toggleMenu);
@@ -11,6 +21,52 @@ function toggleMenu() {
   navMenu.classList.toggle('active');
   overlay.classList.toggle('active');
 }
+
+// ----------------------------------------------------------------
+//              LOGIC FOR REGISTERING A NEW USER
+// ----------------------------------------------------------------
+
+
+sendButton.addEventListener('click', () => {
+
+  const user = inputSignUpUser.value;
+  const pass = inputSignUpPass.value;
+
+  if (user && pass) {
+      addNewUser(user, pass)
+  } else {
+      alert('Llena todos los campos!')
+  }    
+})
+
+// ----------------------------------------------------------------
+//              LOGIC FOR LOGGING IN A NEW USER
+// ----------------------------------------------------------------
+
+const sendLogBtn = document.getElementById('log-in-btn');
+
+
+sendLogBtn.addEventListener('click', () => {
+  const user = inputLogInUser.value;
+  const pass = inputLogInPass.value;
+
+  if (user && pass) {
+      logIn(user, pass);
+  } else {
+      alert('Llena todos los campos!')
+  }     
+  
+})
+
+
+
+
+
+
+
+const logInmodal = document.getElementById('modalLogIn')
+const openLogInModalBtn = document.querySelector('.openModalLogIn');
+const closeLogInBtn = document.querySelector('.close-log-btn');
 
 
 // Get modal and buttons
@@ -36,9 +92,7 @@ window.addEventListener('click', (event) => {
 });
 
 
-const logInmodal = document.getElementById('modalLogIn')
-const openLogInModalBtn = document.querySelector('.openModalLogIn');
-const closeLogInBtn = document.querySelector('.close-log-btn');
+
 
 openLogInModalBtn.addEventListener('click', () => {
   logInmodal.style.display = 'flex';
