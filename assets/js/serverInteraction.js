@@ -1,6 +1,6 @@
 const serverHome = 'http://localhost:3000';
 const serverCampus = 'http://172.16.101.182:3000';
-const serverURL = serverHome;
+const serverURL = serverCampus;
 
 
 export function addNewUser(username, password) {
@@ -53,6 +53,7 @@ export function logIn(username, password) {
     fetch(`${serverURL}/credentials`)
     .then(response => response.json())
     .then(data => {
+        let flag = false;
         data.forEach(element => {
             if (element.username === username && element.password === password) {
 
@@ -60,13 +61,13 @@ export function logIn(username, password) {
                 sessionStorage.setItem('username', username);
                 alert('Sesión iniciada exitosamente!');
                 location.reload();
-                return true;
-
-            } else {
-                alert('Datos Incorrectos!');
-                return false;
-            }           
+                flag = true;
+            }    
         });
+
+        if (!valid) {
+            alert('Datos Incorrectos!')         
+        }
     })
 }
 

@@ -262,7 +262,6 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0 2em;
-    border-bottom: 10px solid var(--sunset);
 }
 
 #inicio h1 {
