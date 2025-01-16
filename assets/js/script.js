@@ -166,6 +166,7 @@ const galleryTwo = document.querySelector('.galleryTwo');
 
 const topTextUserBox = document.querySelector('#user-section-username')
 const bottomTextUserBox = document.querySelector('#texto-inferior')
+const logOutBtn = document.querySelector('#logout-btn')
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -176,6 +177,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		openModalBtn.removeEventListener('click', openModalSign);
 		openLogInModalBtn.removeEventListener('click', openModalLog);
+
+		logOutBtn.classList.toggle('disabled');
+
+		logOutBtn.addEventListener('click', () => {
+			sessionStorage.clear();
+			location.reload();
+		})
   	}
 });
 
