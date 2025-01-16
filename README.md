@@ -8,13 +8,13 @@
 
 - [ ] Crear un sitio web visualmente atractivo, sencillo y funcional.
 - [ ] Diseñar con enfoque **mobile-first**, ya que la mayoría de los usuarios accederán al sitio desde dispositivos móviles.
-- [ ] Asegurarse de que el sitio contenga al menos 3 páginas:
+- [X] Asegurarse de que el sitio contenga al menos 3 páginas:
   - **Página de Inicio (Landing Page)**:
     - [X] Mostrar una página de inicio agradable con elementos como un carrusel de habitaciones, áreas del hotel y fotos de los servicios (comida, spa, zonas húmedas, etc.).
   - **Página de Consulta de Disponibilidad y Reservas**:
-    - [ ] Los usuarios deben poder consultar la disponibilidad de habitaciones ingresando:
-      - [ ] Fechas de estancia.
-      - [ ] Número de personas.
+    - [X] Los usuarios deben poder consultar la disponibilidad de habitaciones ingresando:
+      - [X] Fechas de estancia.
+      - [X] Número de personas.
     - [ ] Mostrar las habitaciones disponibles según los filtros, incluyendo:
       - [ ] Detalles de la habitación (número de camas, servicios como internet, minibar, jacuzzi, etc.).
       - [ ] Precio total y fechas disponibles.
@@ -30,7 +30,7 @@
   - [X] Al hacer clic en el botón, debe abrir una nueva pestaña con WhatsApp para comunicarse con el hotel.
 
 - **Reservas y Gestión de Habitaciones**:
-  - [ ] Permitir que solo los **usuarios registrados** puedan hacer y cancelar reservas.
+  - [X] Permitir que solo los **usuarios registrados** puedan hacer y cancelar reservas.
   - [ ] En la página de reservas, mostrar:
     - [ ] Habitaciones disponibles que coincidan con los filtros (fechas, número de personas).
     - [ ] Detalle del precio, incluyendo número de noches y número de personas.
@@ -45,7 +45,7 @@
 
 - [ ] Asegurar que el sitio sea fácil de usar y **responsivo** en todos los dispositivos, no solo móviles.
 - [ ] Proveer una **interfaz intuitiva** y fácil de usar para la búsqueda de disponibilidad y la realización de reservas.
-- [ ] Utilizar **json-server** para la persistencia de datos y el manejo de reservas.
+- [X] Utilizar **json-server** para la persistencia de datos y el manejo de reservas.
 - [X] Hospedar y desplegar el sitio web en **GitHub Pages**.
 - [X] Utilizar **GitHub** para el control de versiones y la gestión del repositorio del proyecto.
 

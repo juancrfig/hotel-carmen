@@ -1,5 +1,5 @@
 const serverHome = 'http://localhost:3000';
-const serverCampus = 'http://172.16.101.182:3000';
+const serverCampus = 'http://172.16.101.182:4000';
 const serverURL = serverCampus;
 
 
@@ -86,6 +86,15 @@ function logout() {
 }
 
 
-fetch(`${serverURL}/credentials`)
-.then(response => response.json())
-.then(data => console.log(data))
+
+//-------------------------------------------------------------------
+//           LOGIC FOR FILTERING BEDROOMS
+//-------------------------------------------------------------------
+
+export function filterBedrooms(startDate, endDate, numberHumans) {
+
+    console.log(startDate)
+    console.log(endDate)
+    console.log(numberHumans)
+
+}
