@@ -1,0 +1,68 @@
+:root {
+    --black: hsla(20, 100%, 1%, 1);
+    --raw-umber: hsla(25, 55%, 40%, 1);
+    --bistre: hsla(27, 25%, 16%, 1);
+    --coffee: hsla(24, 36%, 29%, 1);
+    --bistre-2: hsla(20, 58%, 14%, 1);
+    --beaver: hsla(29, 12%, 49%, 1);
+    --sunset: hsla(35, 89%, 83%, 1);
+}
+
+body {
+    background-image: url('../media/backgrounds/stars-background-phone.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    font-family: Orbitron;
+    text-align: center;
+}
+
+i {
+    color: var(--beaver);
+    font-size: 1.4rem;
+    margin: 1.5em 0 1em 1em;
+}
+
+h1 {
+    margin-bottom: 1em;
+}
+
+.booking-box {
+    height: 350px;
+    max-width: 325px;
+    background: hsl( 0 0% 100% / .1);
+    backdrop-filter: blur(.25rem);
+    border-radius: 8px;
+    margin: auto;
+    box-shadow: 0px 0px 8px 2px whitesmoke;
+    padding: 2em 4em;
+}
+
+input,
+label {
+    display: block;
+    text-align: center;
+}
+
+input {
+    width: 125px;
+    margin: 1em auto;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    padding: .25em;
+    background-color: whitesmoke;
+}
+
+.booking-box button {
+    margin-top: 1.5em;
+    padding: .75em;
+    border-radius: 5px;
+    font-weight: 600;
+    font-family: Orbitron;
+    background-color: var(--sunset);
+    font-size: 1rem;
+}
+
+
