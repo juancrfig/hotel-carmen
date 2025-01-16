@@ -59,8 +59,9 @@ sendLogBtn.addEventListener('click', () => {
 })
 
 
-
-
+// ----------------------------------------------------------------
+//             MODAL ANIMATIONS AND LOGIC
+// ----------------------------------------------------------------
 
 
 
@@ -91,9 +92,6 @@ window.addEventListener('click', (event) => {
   }
 });
 
-
-
-
 openLogInModalBtn.addEventListener('click', () => {
   logInmodal.style.display = 'flex';
 });
@@ -109,8 +107,10 @@ window.addEventListener('click', (event) => {
 })
 
 
+// ----------------------------------------------------------------
+//              GALLERY
+// ----------------------------------------------------------------
 
-// GALLERY
 
 const gallery = document.querySelector('.gallery');
         const prevBtn = document.querySelector('.prev');
@@ -152,3 +152,24 @@ const galleryTwo = document.querySelector('.galleryTwo');
             currentIndexTwo = (currentIndexTwo + 1) % imageCountTwo;
             updateGallery();
         });
+
+
+
+
+// ----------------------------------------------------------------
+//   MAIN
+// ----------------------------------------------------------------
+
+const nameLoggedInUser = '';
+const topTextUserBox = document.querySelector('#user-section-username')
+const bottomTextUserBox = document.querySelector('#texto-inferior')
+
+document.addEventListener("DOMContentLoaded", function () {
+
+	if (sessionStorage.getItem('isLoggedIn')) {
+      
+		topTextUserBox.textContent = 'Hola';
+		bottomTextUserBox.textContent = sessionStorage.getItem('username');
+  	}
+});
+
