@@ -63,6 +63,11 @@ input {
     font-family: Orbitron;
     background-color: var(--sunset);
     font-size: 1rem;
+    transition: scale 200ms ease-in-out;
+}
+
+.booking-box button:active {
+    scale: 0.9;
 }
 
 
