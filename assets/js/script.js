@@ -164,9 +164,10 @@ const galleryTwo = document.querySelector('.galleryTwo');
 //   MAIN
 // ----------------------------------------------------------------
 
-const topTextUserBox = document.querySelector('#user-section-username')
-const bottomTextUserBox = document.querySelector('#texto-inferior')
-const logOutBtn = document.querySelector('#logout-btn')
+const topTextUserBox = document.querySelector('#user-section-username');
+const bottomTextUserBox = document.querySelector('#texto-inferior');
+const logOutBtn = document.querySelector('#logout-btn');
+const linkReservas = document.querySelector('#link-reservas');
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -184,6 +185,14 @@ document.addEventListener("DOMContentLoaded", function () {
 			sessionStorage.clear();
 			location.reload();
 		})
-  	}
+
+  	} else {
+
+        linkReservas.addEventListener('click', (e) => {
+            e.preventDefault()
+            alert('Debes iniciar sesión para hacer reservas!')
+        })
+
+    }
 });
 

@@ -42,14 +42,15 @@ label {
 .container {
     height: 70vh;
     width: 70vw;
-    min-width: 320px;
-    max-width: 350px;
+    min-width: 300px;
+    max-width: 300px;
     background: hsl( 0 0% 100% / .1);
     backdrop-filter: blur(.25rem);
     border-radius: 50px;
     justify-self: center;
     padding: 2em 4em;
     min-height: 450px;
+    max-width: 450px;
 }
 
 input {
