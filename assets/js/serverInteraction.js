@@ -91,10 +91,42 @@ function logout() {
 //           LOGIC FOR FILTERING BEDROOMS
 //-------------------------------------------------------------------
 
-export function filterBedrooms(startDate, endDate, numberHumans) {
+const filteredBedrooms = [];
+const galleryElement = document.querySelector('.gallery');
 
-    console.log(startDate)
-    console.log(endDate)
-    console.log(numberHumans)
+export function filterBedrooms(startDate, endDate, numberHumans) {
+}
+
+
+fetch(`${serverURL}/bedrooms`)
+.then(response => response.json())
+.then(data => {
+    data.forEach((element) => {
+        if (element.reserved.status) {
+            filteredBedrooms.push(element);
+        };
+    });
+})
+.then(data => {
+    renderBedrooms(filteredBedrooms);
+})
+
+function renderBedrooms(arrayOfBedrooms) {
+
+    arrayOfBedrooms.forEach( (bedroom) => {
+
+        const imageURL = bedroom.image;
+        const numberBeds = bedroom.numberOfBeds;
+        const minibar = bedroom.minibar;
+        
+        console.log(imageURL, numberBeds);
+
+    } )
+
+
+    galleryElement.innerHTML = `
+    <img class="img-gallery" src="">
+    `
+    // console.log(arrayOfBedrooms[0])
 
 }

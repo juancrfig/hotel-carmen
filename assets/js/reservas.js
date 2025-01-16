@@ -17,6 +17,34 @@ leavingDateInput.min = tomorrowDate.toISOString().split('T')[0];
 
 
 //-------------------------------------------------------------------
+//                          GALLERY
+//-------------------------------------------------------------------
+
+
+const gallery = document.querySelector('.gallery');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const imageCount = document.querySelectorAll('.img-gallery').length;
+        let currentIndex = 0;
+
+        function updateGalleryOne() {
+          const imageWidth = window.innerWidth; // Dynamically get the width of each image in pixels
+          gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Use px instead of vw
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+            updateGalleryOne();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % imageCount;
+            updateGalleryOne();
+        });
+
+
+
+//-------------------------------------------------------------------
 //           MAIN FUNCTIONALITY OF THE PAGE
 //-------------------------------------------------------------------
 
