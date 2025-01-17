@@ -79,7 +79,7 @@ h2 {
 .gallery-container {
     position: relative; /* Add this */
     width: 90vw;
-    height: 580px;
+    height: 480px;
     margin: 0 auto;
     overflow: hidden;
     z-index: 2; /* Add this */
@@ -103,7 +103,7 @@ h2 {
 
 .arrow {
     position: absolute;
-    top: 35%;
+    top: 70%;
     transform: translateY(-50%);
     width: 45px;
     height: 45px;
@@ -145,7 +145,7 @@ h2 {
     font-size: 1rem;
     transition: scale 100ms ease-in-out;
     display: block;
-    margin: 0 auto 1.5em auto;
+    margin: 2em auto 1.5em auto;
 }
 
 #reservar-btn:active {
