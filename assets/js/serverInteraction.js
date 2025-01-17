@@ -148,11 +148,27 @@ function renderDetails(currentIndex=0) {
 
     const currentBedroom = arrayOfBedrooms[currentIndex];
 
-    liBedsElm.textContent = `Número de Camas: ${currentBedroom.numberBeds}`;
-    liMinibarElm.textContent = `Minibar: ${currentBedroom.minibar}`;
-    liJacuzziElm.textContent = `Jacuzzi: ${currentBedroom.jacuzzi}`;
+    liBedsElm.textContent = `Número de Camas: ${currentBedroom.numberOfBeds}`;
+
+    if (currentBedroom.minibar) {
+        liMinibarElm.textContent = `Minibar: Sí`;
+    } else {
+        liMinibarElm.textContent = `Minibar: No`;
+    }
+
+    if (currentBedroom.jacuzzi) {
+        liJacuzziElm.textContent = `Jacuzzi: Sí`;
+    } else {
+        liJacuzziElm.textContent = `Jacuzzi: No`;
+    }
+
     liViewElm.textContent = `Vista: ${currentBedroom.view}`;
-    liGravityElm.textContent = `Gravedad Artificial: ${currentBedroom.artificialGravity}`;
+
+    if (currentBedroom.artificialGravity) {
+        liGravityElm.textContent = `Gravedad Artificial: Sí`;
+    } else {
+        liGravityElm.textContent = `Gravedad Artificial: No`;       
+    }
 
     bedroomDetailsElm.appendChild(ulElm);
     ulElm.appendChild(liBedsElm);
@@ -160,6 +176,4 @@ function renderDetails(currentIndex=0) {
     ulElm.appendChild(liJacuzziElm);
     ulElm.appendChild(liViewElm);
     ulElm.appendChild(liGravityElm);
-    
-    // const bookedDate = bedroom.reserved.date;
 }
