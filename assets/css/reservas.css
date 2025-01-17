@@ -135,7 +135,7 @@ h2 {
     right: 25px;
 }
 
-#reservar-btn {
+.reservar-btn {
     padding: 1em;
     background-color: var(--sunset);
     border-radius: 5px;
@@ -144,11 +144,10 @@ h2 {
     font-family: Orbitron;
     font-size: 1rem;
     transition: scale 100ms ease-in-out;
-    display: block;
     margin: 2em auto 1.5em auto;
 }
 
-#reservar-btn:active {
+.reservar-btn:active {
     scale: 0.9;
 }
 

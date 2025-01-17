@@ -32,6 +32,8 @@ if (window.location.pathname.includes("reservas.html")) {
     const availableTitle = document.querySelector('#available-title');
     const bedroomDetailsElm = document.querySelector('.bedroom-details');
     const gallery = document.querySelector('.gallery');
+    const reservarBtnElm = document.querySelector('.reservar-btn');
+    const galleryContainerElm = document.querySelector('.gallery-container');
 
     consultarButton.addEventListener('click', () => {
 
@@ -42,8 +44,12 @@ if (window.location.pathname.includes("reservas.html")) {
         if (new Date(startDate) > new Date(endDate) || 0 > numberHumans || numberHumans > 6) {
             alert('En este universo la fecha de ingreso debe ocurrir antes que la de salida! También recuerda que las habitaciones son de máximo 6 humanos!')
         } else {
-            availableTitle.classList.toggle('disabled')
-            bedroomDetailsElm.classList.toggle('disabled')
+            availableTitle.classList.remove('disabled');
+            bedroomDetailsElm.classList.remove('disabled');
+            galleryContainerElm.classList.remove('disabled');
+            reservarBtnElm.style.display = 'block';
+            
+
             filterBedrooms(startDate, endDate, numberHumans);
         }
 })
