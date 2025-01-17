@@ -11,6 +11,17 @@ const tomorrowDate = todayDate
 const startingDateInput = document.querySelector('#fecha-ingreso');
 const leavingDateInput = document.querySelector('#fecha-salida');
 
+startingDateInput.addEventListener('change', () => {
+
+    const startDate = startingDateInput.value;
+    leavingDateInput.min = startDate;
+
+    if (fechaSalida.value && fechaSalida.value < ingresoDate) {
+        fechaSalida.value = '';
+    }
+
+})
+
 startingDateInput.min = todayDate.toISOString().split('T')[0];
 todayDate.setDate(todayDate.getDate() + 1);
 leavingDateInput.min = tomorrowDate.toISOString().split('T')[0];
