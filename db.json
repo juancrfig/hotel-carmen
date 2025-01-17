@@ -1,0 +1,406 @@
+{
+  "credentials": [
+    {
+      "id": "9aff",
+      "username": "juanesmith",
+      "password": "dragon18"
+    },
+    {
+      "id": "d614",
+      "username": "warlen",
+      "password": "12345"
+    }
+  ],
+  "bedrooms": [
+    {
+      "id": "1",
+      "numberOfBeds": 4,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "Galaxy view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/ample-white-room.webp"
+    },
+    {
+      "id": "2",
+      "numberOfBeds": 2,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "Earth view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/beautiful-look-room.webp"
+    },
+    {
+      "id": "3",
+      "numberOfBeds": 6,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Nebula view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": true,
+        "date": null
+      },
+      "image": "../media/bedrooms/blue-bedroom.webp"
+    },
+    {
+      "id": "4",
+      "numberOfBeds": 1,
+      "minibar": false,
+      "jacuzzi": false,
+      "view": "No window",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/cozy-dark-bedroom.webp"
+    },
+    {
+      "id": "5",
+      "numberOfBeds": 3,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Galaxy view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/green-space-bedroom.webp"
+    },
+    {
+      "id": "6",
+      "numberOfBeds": 5,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "Earth view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/purple-bedroom.webp"
+    },
+    {
+      "id": "7",
+      "numberOfBeds": 4,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "Nebula view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/suite.webp"
+    },
+    {
+      "id": "8",
+      "numberOfBeds": 2,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "No window",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/vertical-blue-bedroom.webp"
+    },
+    {
+      "id": "9",
+      "numberOfBeds": 6,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Galaxy view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/vertical-purple-bedroom.webp"
+    },
+    {
+      "id": "10",
+      "numberOfBeds": 3,
+      "minibar": false,
+      "jacuzzi": false,
+      "view": "Earth view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/vertical-white-room-two.webp"
+    },
+    {
+      "id": "11",
+      "numberOfBeds": 5,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Nebula view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/vertical-white-room.webp"
+    },
+    {
+      "id": "12",
+      "numberOfBeds": 4,
+      "minibar": false,
+      "jacuzzi": false,
+      "view": "No window",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/dune-bedroom-two.webp"
+    },
+    {
+      "id": "13",
+      "numberOfBeds": 1,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "Galaxy view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/favorite-bedroom.jpg"
+    },
+    {
+      "id": "14",
+      "numberOfBeds": 6,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Earth view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/bedroom-dune-four.webp"
+    },
+    {
+      "id": "15",
+      "numberOfBeds": 2,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "Nebula view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/bedroom-dune-three.webp"
+    },
+    {
+      "id": "16",
+      "numberOfBeds": 3,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "No window",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/bedroom-earth.jpg"
+    },
+    {
+      "id": "17",
+      "numberOfBeds": 4,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Galaxy view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/small-bedroom.jpg"
+    },
+    {
+      "id": "18",
+      "numberOfBeds": 5,
+      "minibar": false,
+      "jacuzzi": false,
+      "view": "Earth view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/bedroom-orbit.jpg"
+    },
+    {
+      "id": "19",
+      "numberOfBeds": 6,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Nebula view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/space-bedroom.jpg"
+    },
+    {
+      "id": "20",
+      "numberOfBeds": 2,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "No window",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/bedroom-trees.jpg"
+    },
+    {
+      "id": "21",
+      "numberOfBeds": 1,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "Galaxy view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/techno-bedroom-four.webp"
+    },
+    {
+      "id": "22",
+      "numberOfBeds": 5,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "Earth view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/captain-bedroom.jpg"
+    },
+    {
+      "id": "23",
+      "numberOfBeds": 4,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "Nebula view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/techno-bedroom-one.webp"
+    },
+    {
+      "id": "24",
+      "numberOfBeds": 6,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "No window",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/colorful-bedroom.jpg"
+    },
+    {
+      "id": "25",
+      "numberOfBeds": 3,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "Galaxy view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/techno-bedroom-three.webp"
+    },
+    {
+      "id": "26",
+      "numberOfBeds": 2,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "Earth view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/corporate-bedroom.jpg"
+    },
+    {
+      "id": "27",
+      "numberOfBeds": 4,
+      "minibar": true,
+      "jacuzzi": false,
+      "view": "Galaxy view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/techno-bedroom-two.webp"
+    },
+    {
+      "id": "28",
+      "numberOfBeds": 3,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "Earth view",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/cozy-orbit-bedroom.jpg"
+    },
+    {
+      "id": "29",
+      "numberOfBeds": 5,
+      "minibar": true,
+      "jacuzzi": true,
+      "view": "Nebula view",
+      "artificialGravity": true,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/cyberpunk-bedroom.jpg"
+    },
+    {
+      "id": "30",
+      "numberOfBeds": 2,
+      "minibar": false,
+      "jacuzzi": true,
+      "view": "No window",
+      "artificialGravity": false,
+      "reserved": {
+        "status": false,
+        "date": null
+      },
+      "image": "../media/bedrooms/dune-bedroom-one.webp"
+    }
+  ]
+}
