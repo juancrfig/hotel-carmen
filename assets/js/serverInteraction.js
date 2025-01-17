@@ -1,6 +1,8 @@
+import { setUpGallery } from "./reservas.js";
+
 const serverHome = 'http://localhost:3000';
 const serverCampus = 'http://172.16.101.182:5000';
-const serverURL = serverHome;
+const serverURL = serverCampus;
 
 
 export function addNewUser(username, password) {
@@ -65,7 +67,7 @@ export function logIn(username, password) {
             }    
         });
 
-        if (!valid) {
+        if (!flag) {
             alert('Datos Incorrectos!')         
         }
     })
@@ -121,12 +123,12 @@ function renderBedrooms(arrayOfBedrooms) {
         const artificialGravity = bedroom.artificialGravity;
         const bookedDate = bedroom.reserved.date;
 
-        console.log(imageURL)
-
         const imgElm = document.createElement('img');
         imgElm.setAttribute('src', imageURL);
         imgElm.setAttribute('class', 'img-gallery');
         
         galleryElement.appendChild(imgElm) 
     })
+
+    setUpGallery()
 }

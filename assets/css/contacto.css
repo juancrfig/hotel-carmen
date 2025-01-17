@@ -12,6 +12,7 @@ body {
     background-image: url('../media/backgrounds/contact-wallpaper-phone.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Orbitron';
 }
 
 main {
@@ -40,7 +41,7 @@ label {
 
 
 .container {
-    height: 70vh;
+    height: 50vh;
     width: 70vw;
     min-width: 300px;
     max-width: 300px;
@@ -49,7 +50,8 @@ label {
     border-radius: 50px;
     justify-self: center;
     padding: 2em 4em;
-    min-height: 450px;
+    height: 435px;
+    min-height: 435px;
     max-width: 450px;
 }
 
