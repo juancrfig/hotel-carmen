@@ -73,19 +73,19 @@ export function logIn(username, password) {
     })
 }
 
-function checkSession() {
-    if (sessionStorage.getItem("isLoggedIn") !== "true") {
-        alert("You are not logged in!");
-        // Redirect to login page
-        window.location.href = "login.html";
-    }
-}
+// function checkSession() {
+//     if (sessionStorage.getItem("isLoggedIn") !== "true") {
+//         alert("You are not logged in!");
+//         // Redirect to login page
+//         window.location.href = "login.html";
+//     }
+// }
 
-function logout() {
-    sessionStorage.removeItem("isLoggedIn");
-    sessionStorage.removeItem("username");
-    window.location.href = "../../index.html";
-}
+// function logout() {
+//     sessionStorage.removeItem("isLoggedIn");
+//     sessionStorage.removeItem("username");
+//     window.location.href = "../../index.html";
+// }
 
 
 //-------------------------------------------------------------------
