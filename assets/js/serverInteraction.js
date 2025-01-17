@@ -1,6 +1,6 @@
 const serverHome = 'http://localhost:3000';
 const serverCampus = 'http://172.16.101.182:5000';
-const serverURL = serverCampus;
+const serverURL = serverHome;
 
 
 export function addNewUser(username, password) {

@@ -115,49 +115,55 @@ window.addEventListener('click', (event) => {
 //              GALLERY
 // ----------------------------------------------------------------
 
-
+// Gallery One
 const gallery = document.querySelector('.gallery');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        const imageCount = document.querySelectorAll('.img-gallery').length;
-        let currentIndex = 0;
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const imageCount = document.querySelectorAll('.img-gallery').length;
+let currentIndex = 0;
 
-        function updateGalleryOne() {
-          const imageWidth = window.innerWidth; // Dynamically get the width of each image in pixels
-          gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Use px instead of vw
-        }
+function updateGalleryOne() {
+  const galleryWidth = document.querySelector('.gallery-container').offsetWidth; // Use the actual gallery width
+  gallery.style.transform = `translateX(-${currentIndex * galleryWidth}px)`; // Transition based on gallery width
+}
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + imageCount) % imageCount;
-            updateGalleryOne();
-        });
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+  updateGalleryOne();
+});
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % imageCount;
-            updateGalleryOne();
-        });
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % imageCount;
+  updateGalleryOne();
+});
 
-
+// Gallery Two
 const galleryTwo = document.querySelector('.galleryTwo');
-        const prevBtnTwo = document.querySelector('.prevTwo');
-        const nextBtnTwo = document.querySelector('.nextTwo');
-        const imageCountTwo = document.querySelectorAll('.img-galleryTwo').length;
-        let currentIndexTwo = 0;
+const prevBtnTwo = document.querySelector('.prevTwo');
+const nextBtnTwo = document.querySelector('.nextTwo');
+const imageCountTwo = document.querySelectorAll('.img-galleryTwo').length;
+let currentIndexTwo = 0;
 
-        function updateGallery() {
-          const imageWidth = window.innerWidth; // Dynamically get the width of each image in pixels
-          galleryTwo.style.transform = `translateX(-${currentIndexTwo * imageWidth}px)`; // Use px instead of vw
-      }
+function updateGalleryTwo() {
+  const galleryTwoWidth = document.querySelector('.gallery-container-two').offsetWidth; // Use the actual gallery width
+  galleryTwo.style.transform = `translateX(-${currentIndexTwo * galleryTwoWidth}px)`; // Transition based on gallery width
+}
 
-        prevBtnTwo.addEventListener('click', () => {
-            currentIndexTwo = (currentIndexTwo - 1 + imageCountTwo) % imageCountTwo;
-            updateGallery();
-        });
+prevBtnTwo.addEventListener('click', () => {
+  currentIndexTwo = (currentIndexTwo - 1 + imageCountTwo) % imageCountTwo;
+  updateGalleryTwo();
+});
 
-        nextBtnTwo.addEventListener('click', () => {
-            currentIndexTwo = (currentIndexTwo + 1) % imageCountTwo;
-            updateGallery();
-        });
+nextBtnTwo.addEventListener('click', () => {
+  currentIndexTwo = (currentIndexTwo + 1) % imageCountTwo;
+  updateGalleryTwo();
+});
+
+// Ensure the gallery adapts to screen resizing
+window.addEventListener('resize', () => {
+  updateGalleryOne();
+  updateGalleryTwo();
+});
 
 
 
