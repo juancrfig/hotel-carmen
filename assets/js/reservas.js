@@ -31,7 +31,6 @@ if (window.location.pathname.includes("reservas.html")) {
     const consultarButton = document.querySelector('.booking-box button');
     const availableTitle = document.querySelector('#available-title');
     const bedroomDetailsElm = document.querySelector('.bedroom-details');
-    const gallery = document.querySelector('.gallery');
     const reservarBtnElm = document.querySelector('.reservar-btn');
     const galleryContainerElm = document.querySelector('.gallery-container');
 
@@ -48,7 +47,7 @@ if (window.location.pathname.includes("reservas.html")) {
             bedroomDetailsElm.classList.remove('disabled');
             galleryContainerElm.classList.remove('disabled');
             reservarBtnElm.style.display = 'block';
-            
+
 
             filterBedrooms(startDate, endDate, numberHumans);
         }
@@ -61,6 +60,8 @@ if (window.location.pathname.includes("reservas.html")) {
 //                          GALLERY
 //-------------------------------------------------------------------
 
+export let currentIndex = 0;
+
 export function setUpGallery() {
 
     const gallery = document.querySelector('.gallery');
@@ -68,7 +69,6 @@ export function setUpGallery() {
     const nextBtn = document.querySelector('.next');
     const images = document.querySelectorAll('.gallery img'); // Collect images directly
     const imageCount = images.length;
-    let currentIndex = 0;
     
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + imageCount) % imageCount; // Loop back to last image if current is 0

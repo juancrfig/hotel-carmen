@@ -1,4 +1,4 @@
-import { setUpGallery } from "./reservas.js";
+import { setUpGallery, currentIndex } from "./reservas.js";
 
 const serverHome = 'http://localhost:3000';
 const serverCampus = 'http://172.16.101.182:5000';
@@ -77,23 +77,22 @@ export function logIn(username, password) {
 //           LOGIC FOR FILTERING BEDROOMS
 //-------------------------------------------------------------------
 
-
+const arrayOfBedrooms = [];
 const galleryElement = document.querySelector('.gallery');
 
 export async function filterBedrooms(startDate, endDate, numberHumans) {
-   
-    const filteredBedrooms = [];
 
+    arrayOfBedrooms.length = 0;
     const response = await fetch(`${serverURL}/bedrooms`);
     const data = await response.json();
 
     data.forEach((element) => {
         if (!element.reserved.status) {
-            filteredBedrooms.push(element);
+            arrayOfBedrooms.push(element);
         }
     });
 
-    renderBedrooms(filteredBedrooms)
+    renderBedrooms(arrayOfBedrooms)
 }
 
 function renderBedrooms(arrayOfBedrooms) {
@@ -101,12 +100,6 @@ function renderBedrooms(arrayOfBedrooms) {
     arrayOfBedrooms.forEach( (bedroom) => {
 
         const imageURL = bedroom.image;
-        const numberBeds = bedroom.numberOfBeds;
-        const minibar = bedroom.minibar;
-        const jacuzzi = bedroom.jacuzzi;
-        const view = bedroom.view;
-        const artificialGravity = bedroom.artificialGravity;
-        const bookedDate = bedroom.reserved.date;
 
         const imgElm = document.createElement('img');
         imgElm.setAttribute('src', imageURL);
@@ -116,4 +109,57 @@ function renderBedrooms(arrayOfBedrooms) {
     })
 
     setUpGallery();
+
+    renderDetails()
+}
+
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const bedroomDetailsElm = document.querySelector('.bedroom-details');
+
+prevBtn.addEventListener('click', () => {
+    renderDetails(currentIndex)
+})
+
+nextBtn.addEventListener('click', () => {
+    renderDetails(currentIndex)
+})
+
+function renderDetails(currentIndex=0) {
+
+    bedroomDetailsElm.innerHTML = '';
+    const ulElm = document.createElement('ul');
+
+    const liBedsElm = document.createElement('li')
+    liBedsElm.classList.add('bed-details');
+
+    const liMinibarElm = document.createElement('li')
+    liMinibarElm.classList.add('minibar-details');
+
+    const liJacuzziElm = document.createElement('li')
+    liJacuzziElm.classList.add('jacuzzi-details');
+
+    const liViewElm = document.createElement('li')
+    liViewElm.classList.add('view-details');
+
+    const liGravityElm = document.createElement('li')
+    liMinibarElm.classList.add('gravity-details');
+
+
+    const currentBedroom = arrayOfBedrooms[currentIndex];
+
+    liBedsElm.textContent = `Número de Camas: ${currentBedroom.numberBeds}`;
+    liMinibarElm.textContent = `Minibar: ${currentBedroom.minibar}`;
+    liJacuzziElm.textContent = `Jacuzzi: ${currentBedroom.jacuzzi}`;
+    liViewElm.textContent = `Vista: ${currentBedroom.view}`;
+    liGravityElm.textContent = `Gravedad Artificial: ${currentBedroom.artificialGravity}`;
+
+    bedroomDetailsElm.appendChild(ulElm);
+    ulElm.appendChild(liBedsElm);
+    ulElm.appendChild(liMinibarElm);
+    ulElm.appendChild(liJacuzziElm);
+    ulElm.appendChild(liViewElm);
+    ulElm.appendChild(liGravityElm);
+    
+    // const bookedDate = bedroom.reserved.date;
 }
