@@ -1,5 +1,5 @@
 const serverHome = 'http://localhost:3000';
-const serverCampus = 'http://172.16.101.182:4000';
+const serverCampus = 'http://172.16.101.182:5000';
 const serverURL = serverCampus;
 
 
@@ -102,7 +102,7 @@ fetch(`${serverURL}/bedrooms`)
 .then(response => response.json())
 .then(data => {
     data.forEach((element) => {
-        if (element.reserved.status) {
+        if (!element.reserved.status) {
             filteredBedrooms.push(element);
         };
     });
@@ -118,15 +118,17 @@ function renderBedrooms(arrayOfBedrooms) {
         const imageURL = bedroom.image;
         const numberBeds = bedroom.numberOfBeds;
         const minibar = bedroom.minibar;
+        const jacuzzi = bedroom.jacuzzi;
+        const view = bedroom.view;
+        const artificialGravity = bedroom.artificialGravity;
+        const bookedDate = bedroom.reserved.date;
+
+        console.log(imageURL)
+
+        const imgElm = document.createElement('img');
+        imgElm.setAttribute('src', imageURL);
+        imgElm.setAttribute('class', 'img-gallery');
         
-        console.log(imageURL, numberBeds);
-
-    } )
-
-
-    galleryElement.innerHTML = `
-    <img class="img-gallery" src="">
-    `
-    // console.log(arrayOfBedrooms[0])
-
+        galleryElement.appendChild(imgElm) 
+    })
 }
