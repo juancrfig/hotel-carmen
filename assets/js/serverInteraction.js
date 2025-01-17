@@ -86,30 +86,28 @@ function logout() {
 }
 
 
-
 //-------------------------------------------------------------------
 //           LOGIC FOR FILTERING BEDROOMS
 //-------------------------------------------------------------------
 
-const filteredBedrooms = [];
+
 const galleryElement = document.querySelector('.gallery');
 
-export function filterBedrooms(startDate, endDate, numberHumans) {
-}
+export async function filterBedrooms(startDate, endDate, numberHumans) {
+   
+    const filteredBedrooms = [];
 
+    const response = await fetch(`${serverURL}/bedrooms`);
+    const data = await response.json();
 
-fetch(`${serverURL}/bedrooms`)
-.then(response => response.json())
-.then(data => {
     data.forEach((element) => {
         if (!element.reserved.status) {
             filteredBedrooms.push(element);
-        };
+        }
     });
-})
-.then(data => {
-    renderBedrooms(filteredBedrooms);
-})
+
+    renderBedrooms(filteredBedrooms)
+}
 
 function renderBedrooms(arrayOfBedrooms) {
 
