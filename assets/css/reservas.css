@@ -73,13 +73,13 @@ input {
 }
 
 h2 {
-    margin: 2.5em 0;
+    margin: 2em 0;
 }
 
 .gallery-container {
     position: relative; /* Add this */
     width: 90vw;
-    height: 480px;
+    height: 400px;
     margin: 0 auto;
     overflow: hidden;
     z-index: 2; /* Add this */
@@ -103,7 +103,7 @@ h2 {
 
 .arrow {
     position: absolute;
-    top: 70%;
+    top: 40%;
     transform: translateY(-50%);
     width: 45px;
     height: 45px;
@@ -118,8 +118,8 @@ h2 {
     border: none;
     border-radius: 100%;
     transition: background-color 0.3s;
-    padding-right: 1.5em;
-    padding-bottom: .5em;
+    padding-right: 1.8em;
+    padding-bottom: .8em;
 }
 
 .arrow i {
@@ -144,7 +144,7 @@ h2 {
     font-family: Orbitron;
     font-size: 1rem;
     transition: scale 100ms ease-in-out;
-    margin: 2em auto 1.5em auto;
+    margin: 1.5em auto 1.5em auto;
 }
 
 .reservar-btn:active {
@@ -155,7 +155,7 @@ h2 {
     border: 1px solid whitesmoke;
     border-radius: 10px;
     width: 300px;
-    margin: 2em auto 0 auto;
+    margin: 0 auto;
     padding: 1em 0;
     box-shadow: 0px 0px 8px 5px rgba(114, 110, 110, 0.664);
 }

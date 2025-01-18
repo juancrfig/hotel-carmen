@@ -87,12 +87,16 @@ export async function filterBedrooms(startDate, endDate, numberHumans) {
     const data = await response.json();
 
     data.forEach((element) => {
-        if (!element.reserved.status) {
+        if (!element.reserved.status && element.numberOfBeds === Number(numberHumans)) {
             arrayOfBedrooms.push(element);
         }
     });
 
-    renderBedrooms(arrayOfBedrooms)
+    if (arrayOfBedrooms.length === 0 || startDate === '' || endDate === '') {
+        alert('Ingresa todos los datos!')
+    } else {
+        renderBedrooms(arrayOfBedrooms)
+    }
 }
 
 function renderBedrooms(arrayOfBedrooms) {
@@ -147,6 +151,8 @@ function renderDetails(currentIndex=0) {
 
 
     const currentBedroom = arrayOfBedrooms[currentIndex];
+
+    // console.log(arrayOfBedrooms)
 
     liBedsElm.textContent = `Número de Camas: ${currentBedroom.numberOfBeds}`;
 
