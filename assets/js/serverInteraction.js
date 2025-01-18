@@ -149,6 +149,8 @@ function renderDetails(currentIndex=0) {
     const liGravityElm = document.createElement('li')
     liMinibarElm.classList.add('gravity-details');
 
+    const liPriceElm = document.createElement('li')
+    liPriceElm.classList.add('price-details');
 
     const currentBedroom = arrayOfBedrooms[currentIndex];
 
@@ -176,10 +178,18 @@ function renderDetails(currentIndex=0) {
         liGravityElm.textContent = `Gravedad Artificial: No`;       
     }
 
+    const spanPriceElm = document.createElement('span');
+    spanPriceElm.classList.add('price');
+    spanPriceElm.textContent = 'BTC' 
+
+    liPriceElm.textContent = `Precio Total por Noche: ${currentBedroom.price} `
+    liPriceElm.appendChild(spanPriceElm);
+
     bedroomDetailsElm.appendChild(ulElm);
     ulElm.appendChild(liBedsElm);
     ulElm.appendChild(liMinibarElm);
     ulElm.appendChild(liJacuzziElm);
     ulElm.appendChild(liViewElm);
     ulElm.appendChild(liGravityElm);
+    ulElm.appendChild(liPriceElm);
 }

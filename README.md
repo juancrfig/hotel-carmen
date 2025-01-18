@@ -7,7 +7,7 @@
 ### Requerimientos Generales del Sitio Web
 
 - [ ] Crear un sitio web visualmente atractivo, sencillo y funcional.
-- [ ] Diseñar con enfoque **mobile-first**, ya que la mayoría de los usuarios accederán al sitio desde dispositivos móviles.
+- [X] Diseñar con enfoque **mobile-first**, ya que la mayoría de los usuarios accederán al sitio desde dispositivos móviles.
 - [X] Asegurarse de que el sitio contenga al menos 3 páginas:
   - **Página de Inicio (Landing Page)**:
     - [X] Mostrar una página de inicio agradable con elementos como un carrusel de habitaciones, áreas del hotel y fotos de los servicios (comida, spa, zonas húmedas, etc.).
@@ -15,8 +15,8 @@
     - [X] Los usuarios deben poder consultar la disponibilidad de habitaciones ingresando:
       - [X] Fechas de estancia.
       - [X] Número de personas.
-    - [ ] Mostrar las habitaciones disponibles según los filtros, incluyendo:
-      - [ ] Detalles de la habitación (número de camas, servicios como internet, minibar, jacuzzi, etc.).
+    - [X] Mostrar las habitaciones disponibles según los filtros, incluyendo:
+      - [X] Detalles de la habitación (número de camas, servicios como internet, minibar, jacuzzi, etc.).
       - [ ] Precio total y fechas disponibles.
     - [ ] Permitir a los usuarios reservar habitaciones si están satisfechos con los detalles.
   - **Página de Contacto**:
