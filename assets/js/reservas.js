@@ -87,3 +87,8 @@ function updateGallery(images, gallery, currentIndex) {
     const imageWidth = images[0].clientWidth; // Get width of first image
     gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Update translation
 }
+
+
+reservarBtnElm.addEventListener('click', () => {
+    console.log('Reservar!')
+})
