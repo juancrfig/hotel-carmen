@@ -1,9 +1,10 @@
 import { filterBedrooms, reservarHabitacion } from './serverInteraction.js'
 
 const numberHumansInput = document.querySelector('#numero-personas');
-const reservarBtnElm = document.querySelector('.reservar-btn');
+const reservarBox = document.querySelector('.reservar-box');
 const startingDateInput = document.querySelector('#fecha-ingreso');
 const leavingDateInput = document.querySelector('#fecha-salida');
+const reservarBtnElm = document.querySelector('.reservar-btn');
 
 
 //-------------------------------------------------------------------
@@ -39,29 +40,26 @@ if (window.location.pathname.includes("reservas.html")) {
         
         const calendarControlsElm = document.querySelector('.controls');
 		const calendar = document.querySelector('.calendar-container');
-        
-        consultarButton.addEventListener('click', () => {
-        })
 
         const startDate = startingDateInput.value;
         const endDate = leavingDateInput.value;
         let numberHumans = numberHumansInput.value;
 
-        if (new Date(startDate) > new Date(endDate) || 0 > numberHumans || numberHumans > 6) {
-            alert('En este universo la fecha de ingreso debe ocurrir antes que la de salida! También recuerda que las habitaciones son de máximo 6 humanos!')
-        } else if (startDate === '' || endDate === '' || numberHumans === '') {
+        if ( numberHumans > 6 ) {
+            alert('Recuerda que las habitaciones son de máximo 6 humanos!')
+        } else if (numberHumans === '') {
             alert('Ingrese todos los datos!');
         } else {
             	availableTitle.classList.remove('disabled');
             	bedroomDetailsElm.classList.remove('disabled');
             	galleryContainerElm.classList.remove('disabled');
-            	reservarBtnElm.style.display = 'block';
 				calendarControlsElm.classList.remove('disabled');
 				calendar.classList.remove('disabled');
+                reservarBox.classList.remove('disabled');
 
 
 
-            filterBedrooms(startDate, endDate, numberHumans);
+            filterBedrooms(numberHumans);
         }
 })
 

@@ -80,7 +80,7 @@ const arrayOfBedrooms = [];
 const galleryElement = document.querySelector('.gallery');
 const bedroomDetailsElm = document.querySelector('.bedroom-details');
 
-export async function filterBedrooms(startDate, endDate, numberHumans) {
+export async function filterBedrooms(numberHumans) {
 
     if (isSearching) return;
     try {
@@ -98,7 +98,7 @@ export async function filterBedrooms(startDate, endDate, numberHumans) {
         const data = await response.json();
 
         data.forEach((element) => {
-            if (!element.reserved.status && element.numberOfBeds === Number(numberHumans)) {
+            if (element.numberOfBeds === Number(numberHumans)) {
                 arrayOfBedrooms.push(element);
             }
         });
