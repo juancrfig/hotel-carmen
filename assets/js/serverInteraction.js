@@ -199,7 +199,6 @@ function renderDetails(index = 0) {
     });
 
     bedroomDetailsElm.appendChild(ulElm);
-    console.log(currentBedroom)
     renderCalendar(currentBedroom.reserved.date);
 
     roomID = currentBedroom.id;
@@ -208,7 +207,6 @@ function renderDetails(index = 0) {
 
 function renderCalendar(roomData) {
 
-  console.log(roomData)
   // Utilities to generate date ranges
   const generateDateRange = (start, end) => {
     const range = [];
@@ -216,7 +214,6 @@ function renderCalendar(roomData) {
     const endDate = new Date(end);
     while (current <= endDate) {
       const dateStr = current.toISOString().split("T")[0]; // Only the date part (YYYY-MM-DD)
-      console.log(`Generated date: ${dateStr}`);
       range.push(dateStr);
       current.setDate(current.getDate() + 1);
     }
@@ -228,7 +225,6 @@ function renderCalendar(roomData) {
     ? roomData.flatMap(([start, end]) => generateDateRange(start, end))
     : [];
 
-  console.log('All reserved dates:', allReservedDates);
 
   // Calendar rendering logic
   const renderCalendar = (year, month) => {
@@ -258,12 +254,9 @@ function renderCalendar(roomData) {
           cell.textContent = date;
 
           // Debugging: Log the current date and the reserved dates check
-          console.log(`Checking date: ${formattedDate}`);
           if (allReservedDates.includes(formattedDate)) {
-            console.log(`Marking ${formattedDate} as reserved`);
             cell.classList.add("reserved");
           } else {
-            console.log(`${formattedDate} is not reserved`);
           }
 
           date++;
@@ -279,7 +272,7 @@ function renderCalendar(roomData) {
   let currentMonth = new Date().getMonth();
 
   // Event listeners
-  document.getElementById("calendarPrev").addEventListener("click", () => {
+  document.getElementById("calendarNext").addEventListener("click", () => {
     currentMonth--;
     if (currentMonth < 0) {
       currentMonth = 11;
@@ -288,7 +281,7 @@ function renderCalendar(roomData) {
     renderCalendar(currentYear, currentMonth);
   });
 
-  document.getElementById("calendarNext").addEventListener("click", () => {
+  document.getElementById("calendarPrev").addEventListener("click", () => {
     currentMonth++;
     if (currentMonth > 11) {
       currentMonth = 0;
@@ -319,7 +312,7 @@ export function reservarHabitacion(startDate, endDate) {
       .then(data => {
         // Step 2: Check if the room is already reserved
         if (data.reserved && data.reserved.status) {
-          console.log(`The room ${roomID} is already reserved.`);
+          alert(`La habitacion ${roomID} ya se encuentra reservada`)
           return; // Exit if the room is already reserved
         }
   
@@ -344,7 +337,7 @@ export function reservarHabitacion(startDate, endDate) {
         if (!postResponse.ok) {
           throw new Error(`Failed to reserve room: ${postResponse.statusText}`);
         }
-        console.log(`Room ${roomID} reserved successfully from ${startDate} to ${endDate}.`);
+        alert(`Habitacion ${roomID} reservada exitosamente!`);
         window.location.reload()
       })
       .catch(error => {
