@@ -73,6 +73,10 @@ if (window.location.pathname.includes("reservas.html")) {
 
 export let currentIndex = 0;
 
+export function setCurrentIndex(newIndex) {
+    currentIndex = newIndex;
+}
+
 export function setUpGallery() {
 
     const gallery = document.querySelector('.gallery');
@@ -80,7 +84,10 @@ export function setUpGallery() {
     const nextBtn = document.querySelector('.next');
     const images = document.querySelectorAll('.gallery img'); // Collect images directly
     const imageCount = images.length;
-    
+
+    setCurrentIndex(0);
+	updateGallery(images, gallery, currentIndex)
+
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + imageCount) % imageCount; // Loop back to last image if current is 0
         updateGallery(images, gallery, currentIndex);

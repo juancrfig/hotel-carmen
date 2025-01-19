@@ -1,4 +1,4 @@
-import { setUpGallery, currentIndex } from "./reservas.js";
+import { setUpGallery, currentIndex, setCurrentIndex } from "./reservas.js";
 
 const serverURL = 'https://json-server-79jb.onrender.com';
 
@@ -75,136 +75,131 @@ export function logIn(username, password) {
 //           LOGIC FOR FILTERING BEDROOMS
 //-------------------------------------------------------------------
 
+let isSearching = false;
 const arrayOfBedrooms = [];
 const galleryElement = document.querySelector('.gallery');
+const bedroomDetailsElm = document.querySelector('.bedroom-details');
 
 export async function filterBedrooms(startDate, endDate, numberHumans) {
 
-    arrayOfBedrooms.length = 0;
-    const response = await fetch(`${serverURL}/bedrooms`);
-    const data = await response.json();
+    if (isSearching) return;
+    try {
+        isSearching = true;
 
-    data.forEach((element) => {
-        if (!element.reserved.status && element.numberOfBeds === Number(numberHumans)) {
-            arrayOfBedrooms.push(element);
+        // Clear previous results
+        arrayOfBedrooms.length = 0;
+        galleryElement.innerHTML = '';
+        bedroomDetailsElm.innerHTML = '';
+
+        const response = await fetch(`${serverURL}/bedrooms`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
-    });
+        const data = await response.json();
 
-    if (arrayOfBedrooms.length === 0 || startDate === '' || endDate === '') {
-        alert('Ingresa todos los datos!')
-    } else {
-        renderBedrooms(arrayOfBedrooms)
+        data.forEach((element) => {
+            if (!element.reserved.status && element.numberOfBeds === Number(numberHumans)) {
+                arrayOfBedrooms.push(element);
+            }
+        });
+
+        if (arrayOfBedrooms.length === 0) {
+            alert('No se encontraron habitaciones disponibles con los criterios seleccionados.');
+            return;
+        }
+        
+        await renderBedrooms(arrayOfBedrooms);
+
+    } catch (error) {
+        console.error('Error fetching bedrooms:', error);
+        alert('Error al cargar las habitaciones. Por favor, intente nuevamente.');
+    } finally {
+        isSearching = false;
     }
 }
 
-function renderBedrooms(arrayOfBedrooms) {
-
-    arrayOfBedrooms.forEach( (bedroom) => {
-
-        const imageURL = bedroom.image;
-
-        const imgElm = document.createElement('img');
-        imgElm.setAttribute('src', imageURL);
-        imgElm.setAttribute('class', 'img-gallery');
+async function renderBedrooms(arrayOfBedrooms) {
+    try {
+        // Clear existing gallery
+        galleryElement.innerHTML = '';
         
-        galleryElement.appendChild(imgElm); 
-    })
+        // Create and append all images
+        const imagePromises = arrayOfBedrooms.map((bedroom) => {
+            return new Promise((resolve, reject) => {
+                const imgElm = document.createElement('img');
+                imgElm.onload = () => resolve();
+                imgElm.onerror = () => {
+                    console.error(`Failed to load image: ${bedroom.image}`);
+                    resolve(); // Resolve anyway to not block other images
+                };
+                imgElm.setAttribute('src', bedroom.image);
+                imgElm.setAttribute('class', 'img-gallery');
+                galleryElement.appendChild(imgElm);
+            });
+        });
 
-    setUpGallery();
-
-    renderDetails()
+        await Promise.all(imagePromises);
+        
+        // Reset gallery state
+        setCurrentIndex(0);  // Use the new function instead of direct assignment
+        setUpGallery();
+        renderDetails(0);
+        
+    } catch (error) {
+        console.error('Error rendering bedrooms:', error);
+        alert('Error al mostrar las habitaciones. Por favor, intente nuevamente.');
+    }
 }
 
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
-const bedroomDetailsElm = document.querySelector('.bedroom-details');
 
+// Update event listeners to check if search is in progress
 prevBtn.addEventListener('click', () => {
-    renderDetails(currentIndex)
-})
+    if (!isSearching && arrayOfBedrooms.length > 0) {
+        renderDetails(currentIndex);
+    }
+});
 
 nextBtn.addEventListener('click', () => {
-    renderDetails(currentIndex)
-})
+    if (!isSearching && arrayOfBedrooms.length > 0) {
+        renderDetails(currentIndex);
+    }
+});
 
-function renderDetails(currentIndex=0) {
+function renderDetails(index = 0) {
+    if (!arrayOfBedrooms.length || index >= arrayOfBedrooms.length) {
+        console.error('No bedrooms available or invalid index');
+        return;
+    }
+
+    const currentBedroom = arrayOfBedrooms[index];
+    if (!currentBedroom) {
+        console.error('Unable to find bedroom data for index:', index);
+        return;
+    }
 
     bedroomDetailsElm.innerHTML = '';
     const ulElm = document.createElement('ul');
 
-    const liBedsElm = document.createElement('li')
-    liBedsElm.classList.add('bed-details');
+    const details = [
+        { class: 'bed-details', text: `Número de Camas: ${currentBedroom.numberOfBeds}` },
+        { class: 'minibar-details', text: `Minibar: ${currentBedroom.minibar ? 'Sí' : 'No'}` },
+        { class: 'jacuzzi-details', text: `Jacuzzi: ${currentBedroom.jacuzzi ? 'Sí' : 'No'}` },
+        { class: 'view-details', text: `Vista: ${currentBedroom.view}` },
+        { class: 'gravity-details', text: `Gravedad Artificial: ${currentBedroom.artificialGravity ? 'Sí' : 'No'}` },
+        { class: 'price-details', text: `Precio Total por Noche: ${currentBedroom.price} BTC` }
+    ];
 
-    const liMinibarElm = document.createElement('li')
-    liMinibarElm.classList.add('minibar-details');
-
-    const liJacuzziElm = document.createElement('li')
-    liJacuzziElm.classList.add('jacuzzi-details');
-
-    const liViewElm = document.createElement('li')
-    liViewElm.classList.add('view-details');
-
-    const liGravityElm = document.createElement('li')
-    liMinibarElm.classList.add('gravity-details');
-
-    const liPriceElm = document.createElement('li')
-    liPriceElm.classList.add('price-details');
-
-    const currentBedroom = arrayOfBedrooms[currentIndex];
-
-    
-    // Si quito estos dos console.log() métodos, la galeria deja de funcionar a veces,
-    // aparece que es porque lee como "undefined" algunos valores del archivo json
-    // lo que me hace suponer que los console.log() sirven como un tipo de await
-    // y provocan una pequeña pausa que hace que los valores que normalmente dan
-    // undefined lleguen y sean leidos correctamente.
-    // Debo arreglar esto luego de finalizar todo el frontend
-    console.log(arrayOfBedrooms)
-    console.log(currentBedroom.numberOfBeds)
-
-
-
-    liBedsElm.textContent = `Número de Camas: ${currentBedroom.numberOfBeds}`;
-
-    if (currentBedroom.minibar) {
-        liMinibarElm.textContent = `Minibar: Sí`;
-    } else {
-        liMinibarElm.textContent = `Minibar: No`;
-    }
-
-    if (currentBedroom.jacuzzi) {
-        liJacuzziElm.textContent = `Jacuzzi: Sí`;
-    } else {
-        liJacuzziElm.textContent = `Jacuzzi: No`;
-    }
-
-    liViewElm.textContent = `Vista: ${currentBedroom.view}`;
-
-    if (currentBedroom.artificialGravity) {
-        liGravityElm.textContent = `Gravedad Artificial: Sí`;
-    } else {
-        liGravityElm.textContent = `Gravedad Artificial: No`;       
-    }
-
-    const spanPriceElm = document.createElement('span');
-    spanPriceElm.classList.add('price');
-    spanPriceElm.textContent = 'BTC' 
-
-    liPriceElm.textContent = `Precio Total por Noche: ${currentBedroom.price} `
-    liPriceElm.appendChild(spanPriceElm);
+    details.forEach(detail => {
+        const li = document.createElement('li');
+        li.classList.add(detail.class);
+        li.textContent = detail.text;
+        ulElm.appendChild(li);
+    });
 
     bedroomDetailsElm.appendChild(ulElm);
-    ulElm.appendChild(liBedsElm);
-    ulElm.appendChild(liMinibarElm);
-    ulElm.appendChild(liJacuzziElm);
-    ulElm.appendChild(liViewElm);
-    ulElm.appendChild(liGravityElm);
-    ulElm.appendChild(liPriceElm);
-
-    const reservedDates = currentBedroom.reserved.date;
-    renderCalendar(reservedDates);
 }
-
 
 
 function renderCalendar(roomData) {
