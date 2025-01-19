@@ -1,6 +1,10 @@
-import { filterBedrooms } from './serverInteraction.js'
+import { filterBedrooms, reservarHabitacion } from './serverInteraction.js'
 
-const numberHumansInput = document.querySelector('#numero-personas')
+const numberHumansInput = document.querySelector('#numero-personas');
+const reservarBtnElm = document.querySelector('.reservar-btn');
+const startingDateInput = document.querySelector('#fecha-ingreso');
+const leavingDateInput = document.querySelector('#fecha-salida');
+
 
 //-------------------------------------------------------------------
 //           LOGIC FOR RANGE OF VALID DATES
@@ -15,9 +19,6 @@ if (window.location.pathname.includes("reservas.html")) {
     const todayDate = new Date();
     const tomorrowDate = new Date(todayDate); // Create a new Date object for tomorrow, so it doesn't affect todayDate
 
-    const startingDateInput = document.querySelector('#fecha-ingreso');
-    const leavingDateInput = document.querySelector('#fecha-salida');
-
     startingDateInput.addEventListener('change', () => {
         const startDate = startingDateInput.value;
         leavingDateInput.min = startDate;
@@ -28,18 +29,18 @@ if (window.location.pathname.includes("reservas.html")) {
     todayDate.setDate(todayDate.getDate() + 1);
     leavingDateInput.min = tomorrowDate.toISOString().split('T')[0];
 
-    const consultarButton = document.querySelector('.booking-box button');
     const availableTitle = document.querySelector('#available-title');
     const bedroomDetailsElm = document.querySelector('.bedroom-details');
     const galleryContainerElm = document.querySelector('.gallery-container');
+	const consultarButton = document.querySelector('.booking-box button');
+;
 
     consultarButton.addEventListener('click', () => {
         
-        const reservarBtnElm = document.querySelector('.reservar-btn');
         const calendarControlsElm = document.querySelector('.controls');
 		const calendar = document.querySelector('.calendar-container');
         
-        reservarBtnElm.addEventListener('click', () => {
+        consultarButton.addEventListener('click', () => {
         })
 
         const startDate = startingDateInput.value;
@@ -105,3 +106,13 @@ function updateGallery(images, gallery, currentIndex) {
     const imageWidth = images[0].clientWidth; // Get width of first image
     gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Update translation
 }
+
+
+
+// LOGICA PARA HACER Y CHEQUEAR RESERVAS 
+
+reservarBtnElm.addEventListener('click', () => {
+
+    reservarHabitacion(startingDateInput.value, leavingDateInput.value)
+    
+})

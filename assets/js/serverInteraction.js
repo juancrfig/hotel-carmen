@@ -199,6 +199,9 @@ function renderDetails(index = 0) {
     });
 
     bedroomDetailsElm.appendChild(ulElm);
+    renderCalendar(currentBedroom.reserved.dates);
+
+    roomID = currentBedroom.id;
 }
 
 
@@ -215,12 +218,10 @@ function renderCalendar(roomData) {
       return range;
     };
   
-    // Extract all reserved dates from an array of ranges
-    const allReservedDates = roomData.flatMap(room =>
-      room.reserved.status
-        ? room.reserved.dates.flatMap(([start, end]) => generateDateRange(start, end))
-        : []
-    );
+    // Extract reserved dates for a single room
+    const allReservedDates = roomData
+      ? roomData.reserved.dates.flatMap(([start, end]) => generateDateRange(start, end))
+      : [];
   
     // Calendar rendering logic
     const renderCalendar = (year, month) => {
@@ -283,5 +284,55 @@ function renderCalendar(roomData) {
   
     // Initial render
     renderCalendar(currentYear, currentMonth);
+  }
+
+let roomID = 1;
+
+
+export function reservarHabitacion(startDate, endDate) {
+  
+    // Step 1: Fetch room details
+    fetch(`${serverURL}/bedrooms/${roomID}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Failed to fetch room details: ${response.statusText}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Step 2: Check if the room is already reserved
+        if (data.reserved && data.reserved.status) {
+          console.log(`The room ${roomID} is already reserved.`);
+          return; // Exit if the room is already reserved
+        }
+  
+        // Step 3: Prepare reservation details
+        const reservationDetails = {
+          reserved: {
+            status: true,
+            dates: [[startDate, endDate]] // Add new reservation
+          }
+        };
+  
+        // Step 4: Update reservation on the server
+        return fetch(`${serverURL}/bedrooms/${roomID}`, {
+          method: "PATCH", // Use PATCH to update reservation
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(reservationDetails)
+        });
+      })
+      .then(postResponse => {
+        if (!postResponse.ok) {
+          throw new Error(`Failed to reserve room: ${postResponse.statusText}`);
+        }
+        console.log(`Room ${roomID} reserved successfully from ${startDate} to ${endDate}.`);
+        window.location.reload()
+      })
+      .catch(error => {
+        // Handle errors during any step
+        console.error(`Error during reservation: ${error.message}`);
+      });
   }
   
