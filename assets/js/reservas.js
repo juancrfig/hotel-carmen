@@ -112,4 +112,16 @@ function updateGallery(images, gallery, currentIndex) {
 }
 
 
+const modalOpenBtn = document.querySelector('#modalInfoBtn');
+
+modalOpenBtn.addEventListener('click', () => {
+    console.log('open modal')
+    document.querySelector('.modalInfo').classList.remove('disabled')
+})
+
+const closeBtnModal = document.querySelector('.close-btn');
+
+closeBtnModal.addEventListener('click', () => {
+    document.querySelector(".modalInfo").classList.add('disabled');
+})
 

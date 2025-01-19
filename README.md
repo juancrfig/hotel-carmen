@@ -17,8 +17,8 @@
       - [X] Número de personas.
     - [X] Mostrar las habitaciones disponibles según los filtros, incluyendo:
       - [X] Detalles de la habitación (número de camas, servicios como internet, minibar, jacuzzi, etc.).
-      - [ ] Precio total y fechas disponibles.
-    - [ ] Permitir a los usuarios reservar habitaciones si están satisfechos con los detalles.
+      - [X] Precio total y fechas disponibles.
+    - [X] Permitir a los usuarios reservar habitaciones si están satisfechos con los detalles.
   - **Página de Contacto**:
     - [X] Incluir la ubicación y la información de contacto del hotel.
     - [X] Proveer diferentes formas para que los usuarios se comuniquen con el hotel (teléfono, correo electrónico, etc.).
@@ -32,12 +32,12 @@
 - **Reservas y Gestión de Habitaciones**:
   - [X] Permitir que solo los **usuarios registrados** puedan hacer y cancelar reservas.
   - [ ] En la página de reservas, mostrar:
-    - [ ] Habitaciones disponibles que coincidan con los filtros (fechas, número de personas).
-    - [ ] Detalle del precio, incluyendo número de noches y número de personas.
+    - [X] Habitaciones disponibles que coincidan con los filtros (fechas, número de personas).
+    - [X] Detalle del precio, incluyendo número de noches y número de personas.
   - [ ] Mostrar información clara sobre la **hora de check-in** (14:00) y **política de expiración de la reserva** (si la reserva no es efectiva antes de las 16:00, la habitación se liberará).
-  - [ ] Asegurarse de que después de hacer clic en "Reservar", el sistema verifique si la habitación sigue disponible:
-    - [ ] Si está disponible, proceder con la reserva.
-    - [ ] Si no está disponible, notificar al usuario que la habitación ya no está disponible.
+  - [X] Asegurarse de que después de hacer clic en "Reservar", el sistema verifique si la habitación sigue disponible:
+    - [X] Si está disponible, proceder con la reserva.
+    - [X] Si no está disponible, notificar al usuario que la habitación ya no está disponible.
   - [ ] Permitir que los usuarios **cancelen** una reserva de forma sencilla.
   - [ ] Proveer información clara sobre la **política de cancelación** de reservas del hotel.
 

@@ -69,8 +69,19 @@
                 <label for="fecha-salida">Fecha de Salida</label>
                 <input type="date" id="fecha-salida">
                 <button class="reservar-btn">Reservar</button>
+                <div class="politicas-box">
+                    <button id="modalInfoBtn">No olvide leer nuestras politicas de reserva</button>
+                </div>
             </div>
         </section>
     </main>
+    <div class="modalInfo modal-overlay disabled">
+        <div class="modal-content">
+            <i class="fa-solid fa-xmark close-btn" onclick="closeModal()"></i>
+            <h2>Información sobre la Reserva</h2>
+            <p><strong>Hora de check-in:</strong> 14:00</p>
+            <p><strong>Política de expiración de la reserva:</strong> Si la reserva no se efectúa antes de las 16:00, la habitación será liberada.</p>
+        </div>
+    </div>
 </body>
 </html>
