@@ -34,7 +34,7 @@
   - [ ] En la página de reservas, mostrar:
     - [X] Habitaciones disponibles que coincidan con los filtros (fechas, número de personas).
     - [X] Detalle del precio, incluyendo número de noches y número de personas.
-  - [ ] Mostrar información clara sobre la **hora de check-in** (14:00) y **política de expiración de la reserva** (si la reserva no es efectiva antes de las 16:00, la habitación se liberará).
+  - [X] Mostrar información clara sobre la **hora de check-in** (14:00) y **política de expiración de la reserva** (si la reserva no es efectiva antes de las 16:00, la habitación se liberará).
   - [X] Asegurarse de que después de hacer clic en "Reservar", el sistema verifique si la habitación sigue disponible:
     - [X] Si está disponible, proceder con la reserva.
     - [X] Si no está disponible, notificar al usuario que la habitación ya no está disponible.
@@ -44,7 +44,7 @@
 ### Funcionalidades Adicionales
 
 - [ ] Asegurar que el sitio sea fácil de usar y **responsivo** en todos los dispositivos, no solo móviles.
-- [ ] Proveer una **interfaz intuitiva** y fácil de usar para la búsqueda de disponibilidad y la realización de reservas.
+- [X] Proveer una **interfaz intuitiva** y fácil de usar para la búsqueda de disponibilidad y la realización de reservas.
 - [X] Utilizar **json-server** para la persistencia de datos y el manejo de reservas.
 - [X] Hospedar y desplegar el sitio web en **GitHub Pages**.
 - [X] Utilizar **GitHub** para el control de versiones y la gestión del repositorio del proyecto.
@@ -56,7 +56,7 @@
 ## Directrices de Desarrollo
 
 - [ ] Mantener el código **simple y bien estructurado**.
-- [ ] Usar **HTML**, **CSS** y **JavaScript** siguiendo las mejores prácticas.
+- [X] Usar **HTML**, **CSS** y **JavaScript** siguiendo las mejores prácticas.
 - [ ] Asegurar que el sitio sea **accesible** y siga las **WCAG** (Web Content Accessibility Guidelines).
 - [ ] Proveer **documentación** y comentarios adecuados en el código para asegurar su mantenibilidad.
 - [X] Seguir el enfoque **mobile-first** en el diseño y desarrollo del sitio web.

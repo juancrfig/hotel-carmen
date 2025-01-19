@@ -69,6 +69,20 @@ if (window.location.pathname.includes("reservas.html")) {
         }
 })
 
+const modalOpenBtn = document.querySelector('#modalInfoBtn');
+
+modalOpenBtn.addEventListener('click', () => {
+    console.log('open modal')
+    document.querySelector('.modalInfo').classList.remove('disabled')
+})
+
+const closeBtnModal = document.querySelector('.close-btn');
+
+closeBtnModal.addEventListener('click', () => {
+    document.querySelector(".modalInfo").classList.add('disabled');
+})
+
+
 }
 
 
@@ -110,18 +124,3 @@ function updateGallery(images, gallery, currentIndex) {
     const imageWidth = images[0].clientWidth; // Get width of first image
     gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Update translation
 }
-
-
-const modalOpenBtn = document.querySelector('#modalInfoBtn');
-
-modalOpenBtn.addEventListener('click', () => {
-    console.log('open modal')
-    document.querySelector('.modalInfo').classList.remove('disabled')
-})
-
-const closeBtnModal = document.querySelector('.close-btn');
-
-closeBtnModal.addEventListener('click', () => {
-    document.querySelector(".modalInfo").classList.add('disabled');
-})
-

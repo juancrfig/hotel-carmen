@@ -49,6 +49,8 @@ const sendLogBtn = document.getElementById('log-in-btn');
 sendLogBtn.addEventListener('click', () => {
   const user = inputLogInUser.value;
   const pass = inputLogInPass.value;
+  const linkReservas = document.querySelector('#link-mis-reservas')
+
 
   if (user && pass) {
       logIn(user, pass);
@@ -188,10 +190,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		openLogInModalBtn.removeEventListener('click', openModalLog);
 
 		logOutBtn.classList.toggle('disabled');
+    document.querySelector('.link-mis-reservas').classList.remove('disabled')
 
 		logOutBtn.addEventListener('click', () => {
 			sessionStorage.clear();
 			location.reload();
+
 		})
 
   	} else {
