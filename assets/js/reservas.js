@@ -17,6 +17,12 @@ if (window.location.pathname.includes("reservas.html")) {
     //           MAIN FUNCTIONALITY OF THE PAGE
     //-------------------------------------------------------------------
 
+    reservarBtnElm.addEventListener('click', () => {
+
+        reservarHabitacion(startingDateInput.value, leavingDateInput.value)
+        
+    })
+
     const todayDate = new Date();
     const tomorrowDate = new Date(todayDate); // Create a new Date object for tomorrow, so it doesn't affect todayDate
 
@@ -107,10 +113,3 @@ function updateGallery(images, gallery, currentIndex) {
 
 
 
-// LOGICA PARA HACER Y CHEQUEAR RESERVAS 
-
-reservarBtnElm.addEventListener('click', () => {
-
-    reservarHabitacion(startingDateInput.value, leavingDateInput.value)
-    
-})

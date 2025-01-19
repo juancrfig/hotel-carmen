@@ -199,92 +199,109 @@ function renderDetails(index = 0) {
     });
 
     bedroomDetailsElm.appendChild(ulElm);
-    renderCalendar(currentBedroom.reserved.dates);
+    console.log(currentBedroom)
+    renderCalendar(currentBedroom.reserved.date);
 
     roomID = currentBedroom.id;
 }
 
 
 function renderCalendar(roomData) {
-    // Utilities to generate date ranges
-    const generateDateRange = (start, end) => {
-      const range = [];
-      let current = new Date(start);
-      const endDate = new Date(end);
-      while (current <= endDate) {
-        range.push(current.toISOString().split("T")[0]);
-        current.setDate(current.getDate() + 1);
-      }
-      return range;
-    };
-  
-    // Extract reserved dates for a single room
-    const allReservedDates = roomData
-      ? roomData.reserved.dates.flatMap(([start, end]) => generateDateRange(start, end))
-      : [];
-  
-    // Calendar rendering logic
-    const renderCalendar = (year, month) => {
-      const calendar = document.getElementById("calendar").querySelector("tbody");
-      const currentMonth = document.getElementById("current-month");
-      calendar.innerHTML = "";
-  
-      const firstDay = new Date(year, month, 1).getDay();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-  
-      // Update month/year display
-      currentMonth.textContent = new Date(year, month).toLocaleString("default", { month: "long", year: "numeric" });
-  
-      // Fill calendar
-      let date = 1;
-      for (let i = 0; i < 6; i++) { // 6 rows for weeks
-        const row = document.createElement("tr");
-        for (let j = 0; j < 7; j++) { // 7 columns for days
-          const cell = document.createElement("td");
-          if (i === 0 && j < firstDay) {
-            cell.textContent = ""; // Empty cell before first day
-          } else if (date > daysInMonth) {
-            break; // Stop filling after last day
+
+  console.log(roomData)
+  // Utilities to generate date ranges
+  const generateDateRange = (start, end) => {
+    const range = [];
+    let current = new Date(start);
+    const endDate = new Date(end);
+    while (current <= endDate) {
+      const dateStr = current.toISOString().split("T")[0]; // Only the date part (YYYY-MM-DD)
+      console.log(`Generated date: ${dateStr}`);
+      range.push(dateStr);
+      current.setDate(current.getDate() + 1);
+    }
+    return range;
+  };
+
+  // Extract reserved dates from an array of nested arrays
+  const allReservedDates = Array.isArray(roomData)
+    ? roomData.flatMap(([start, end]) => generateDateRange(start, end))
+    : [];
+
+  console.log('All reserved dates:', allReservedDates);
+
+  // Calendar rendering logic
+  const renderCalendar = (year, month) => {
+    const calendar = document.getElementById("calendar").querySelector("tbody");
+    const currentMonth = document.getElementById("current-month");
+    calendar.innerHTML = "";
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Update month/year display
+    currentMonth.textContent = new Date(year, month).toLocaleString("default", { month: "long", year: "numeric" });
+
+    // Fill calendar
+    let date = 1;
+    for (let i = 0; i < 6; i++) { // 6 rows for weeks
+      const row = document.createElement("tr");
+      for (let j = 0; j < 7; j++) { // 7 columns for days
+        const cell = document.createElement("td");
+        if (i === 0 && j < firstDay) {
+          cell.textContent = ""; // Empty cell before first day
+        } else if (date > daysInMonth) {
+          break; // Stop filling after last day
+        } else {
+          const currentDate = new Date(year, month, date);
+          const formattedDate = currentDate.toISOString().split("T")[0]; // Only date part (YYYY-MM-DD)
+          cell.textContent = date;
+
+          // Debugging: Log the current date and the reserved dates check
+          console.log(`Checking date: ${formattedDate}`);
+          if (allReservedDates.includes(formattedDate)) {
+            console.log(`Marking ${formattedDate} as reserved`);
+            cell.classList.add("reserved");
           } else {
-            const currentDate = new Date(year, month, date).toISOString().split("T")[0];
-            cell.textContent = date;
-            if (allReservedDates.includes(currentDate)) {
-              cell.classList.add("reserved");
-            }
-            date++;
+            console.log(`${formattedDate} is not reserved`);
           }
-          row.appendChild(cell);
+
+          date++;
         }
-        calendar.appendChild(row);
+        row.appendChild(cell);
       }
-    };
-  
-    // Initial state
-    let currentYear = new Date().getFullYear();
-    let currentMonth = new Date().getMonth();
-  
-    // Event listeners
-    document.getElementById("calendarPrev").addEventListener("click", () => {
-      currentMonth--;
-      if (currentMonth < 0) {
-        currentMonth = 11;
-        currentYear--;
-      }
-      renderCalendar(currentYear, currentMonth);
-    });
-  
-    document.getElementById("calendarNext").addEventListener("click", () => {
-      currentMonth++;
-      if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-      }
-      renderCalendar(currentYear, currentMonth);
-    });
-  
-    // Initial render
+      calendar.appendChild(row);
+    }
+  };
+
+  // Initial state
+  let currentYear = new Date().getFullYear();
+  let currentMonth = new Date().getMonth();
+
+  // Event listeners
+  document.getElementById("calendarPrev").addEventListener("click", () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
     renderCalendar(currentYear, currentMonth);
-  }
+  });
+
+  document.getElementById("calendarNext").addEventListener("click", () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    renderCalendar(currentYear, currentMonth);
+  });
+
+  // Initial render
+  renderCalendar(currentYear, currentMonth);
+}
+
+
 
 let roomID = 1;
 
@@ -310,7 +327,7 @@ export function reservarHabitacion(startDate, endDate) {
         const reservationDetails = {
           reserved: {
             status: true,
-            dates: [[startDate, endDate]] // Add new reservation
+            date: [[startDate, endDate]] // Add new reservation
           }
         };
   
