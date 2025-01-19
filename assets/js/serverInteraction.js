@@ -1,8 +1,6 @@
 import { setUpGallery, currentIndex } from "./reservas.js";
 
-const serverHome = 'http://localhost:3000';
-const serverCampus = 'http://172.16.101.182:5000';
-const serverURL = serverCampus;
+const serverURL = 'https://json-server-79jb.onrender.com';
 
 
 export function addNewUser(username, password) {
@@ -154,7 +152,17 @@ function renderDetails(currentIndex=0) {
 
     const currentBedroom = arrayOfBedrooms[currentIndex];
 
-    // console.log(arrayOfBedrooms)
+    
+    // Si quito estos dos console.log() métodos, la galeria deja de funcionar a veces,
+    // aparece que es porque lee como "undefined" algunos valores del archivo json
+    // lo que me hace suponer que los console.log() sirven como un tipo de await
+    // y provocan una pequeña pausa que hace que los valores que normalmente dan
+    // undefined lleguen y sean leidos correctamente.
+    // Debo arreglar esto luego de finalizar todo el frontend
+    console.log(arrayOfBedrooms)
+    console.log(currentBedroom.numberOfBeds)
+
+
 
     liBedsElm.textContent = `Número de Camas: ${currentBedroom.numberOfBeds}`;
 
@@ -192,4 +200,93 @@ function renderDetails(currentIndex=0) {
     ulElm.appendChild(liViewElm);
     ulElm.appendChild(liGravityElm);
     ulElm.appendChild(liPriceElm);
+
+    const reservedDates = currentBedroom.reserved.date;
+    renderCalendar(reservedDates);
 }
+
+
+
+function renderCalendar(roomData) {
+    // Utilities to generate date ranges
+    const generateDateRange = (start, end) => {
+      const range = [];
+      let current = new Date(start);
+      const endDate = new Date(end);
+      while (current <= endDate) {
+        range.push(current.toISOString().split("T")[0]);
+        current.setDate(current.getDate() + 1);
+      }
+      return range;
+    };
+  
+    // Extract all reserved dates from an array of ranges
+    const allReservedDates = roomData.flatMap(room =>
+      room.reserved.status
+        ? room.reserved.dates.flatMap(([start, end]) => generateDateRange(start, end))
+        : []
+    );
+  
+    // Calendar rendering logic
+    const renderCalendar = (year, month) => {
+      const calendar = document.getElementById("calendar").querySelector("tbody");
+      const currentMonth = document.getElementById("current-month");
+      calendar.innerHTML = "";
+  
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+  
+      // Update month/year display
+      currentMonth.textContent = new Date(year, month).toLocaleString("default", { month: "long", year: "numeric" });
+  
+      // Fill calendar
+      let date = 1;
+      for (let i = 0; i < 6; i++) { // 6 rows for weeks
+        const row = document.createElement("tr");
+        for (let j = 0; j < 7; j++) { // 7 columns for days
+          const cell = document.createElement("td");
+          if (i === 0 && j < firstDay) {
+            cell.textContent = ""; // Empty cell before first day
+          } else if (date > daysInMonth) {
+            break; // Stop filling after last day
+          } else {
+            const currentDate = new Date(year, month, date).toISOString().split("T")[0];
+            cell.textContent = date;
+            if (allReservedDates.includes(currentDate)) {
+              cell.classList.add("reserved");
+            }
+            date++;
+          }
+          row.appendChild(cell);
+        }
+        calendar.appendChild(row);
+      }
+    };
+  
+    // Initial state
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth();
+  
+    // Event listeners
+    document.getElementById("calendarPrev").addEventListener("click", () => {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar(currentYear, currentMonth);
+    });
+  
+    document.getElementById("calendarNext").addEventListener("click", () => {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      renderCalendar(currentYear, currentMonth);
+    });
+  
+    // Initial render
+    renderCalendar(currentYear, currentMonth);
+  }
+  

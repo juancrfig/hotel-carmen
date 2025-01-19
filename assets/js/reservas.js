@@ -31,10 +31,16 @@ if (window.location.pathname.includes("reservas.html")) {
     const consultarButton = document.querySelector('.booking-box button');
     const availableTitle = document.querySelector('#available-title');
     const bedroomDetailsElm = document.querySelector('.bedroom-details');
-    const reservarBtnElm = document.querySelector('.reservar-btn');
     const galleryContainerElm = document.querySelector('.gallery-container');
 
     consultarButton.addEventListener('click', () => {
+        
+        const reservarBtnElm = document.querySelector('.reservar-btn');
+        const calendarControlsElm = document.querySelector('.controls');
+		const calendar = document.querySelector('.calendar-container');
+        
+        reservarBtnElm.addEventListener('click', () => {
+        })
 
         const startDate = startingDateInput.value;
         const endDate = leavingDateInput.value;
@@ -42,11 +48,16 @@ if (window.location.pathname.includes("reservas.html")) {
 
         if (new Date(startDate) > new Date(endDate) || 0 > numberHumans || numberHumans > 6) {
             alert('En este universo la fecha de ingreso debe ocurrir antes que la de salida! También recuerda que las habitaciones son de máximo 6 humanos!')
+        } else if (startDate === '' || endDate === '' || numberHumans === '') {
+            alert('Ingrese todos los datos!');
         } else {
-            availableTitle.classList.remove('disabled');
-            bedroomDetailsElm.classList.remove('disabled');
-            galleryContainerElm.classList.remove('disabled');
-            reservarBtnElm.style.display = 'block';
+            	availableTitle.classList.remove('disabled');
+            	bedroomDetailsElm.classList.remove('disabled');
+            	galleryContainerElm.classList.remove('disabled');
+            	reservarBtnElm.style.display = 'block';
+				calendarControlsElm.classList.remove('disabled');
+				calendar.classList.remove('disabled');
+
 
 
             filterBedrooms(startDate, endDate, numberHumans);
@@ -87,8 +98,3 @@ function updateGallery(images, gallery, currentIndex) {
     const imageWidth = images[0].clientWidth; // Get width of first image
     gallery.style.transform = `translateX(-${currentIndex * imageWidth}px)`; // Update translation
 }
-
-
-reservarBtnElm.addEventListener('click', () => {
-    console.log('Reservar!')
-})
