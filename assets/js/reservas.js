@@ -72,7 +72,6 @@ if (window.location.pathname.includes("reservas.html")) {
 const modalOpenBtn = document.querySelector('#modalInfoBtn');
 
 modalOpenBtn.addEventListener('click', () => {
-    console.log('open modal')
     document.querySelector('.modalInfo').classList.remove('disabled')
 })
 

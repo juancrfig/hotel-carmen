@@ -45,3 +45,17 @@ section {
     height: 40px;
     width: 40px;
 }
+
+ul {
+    margin-top: 2em;
+    font-size: .8rem;
+}
+
+li {
+    transition: color 250ms ease-in-out;
+}
+
+li:hover {
+    color: red;
+    cursor:crosshair;
+}
