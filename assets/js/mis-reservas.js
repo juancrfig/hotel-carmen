@@ -129,3 +129,34 @@ function cancelBooking(target) {
 
 
 loadBookings();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modalOverlay = document.getElementById('modalOverlay');
+    const closeButton = document.getElementById('closeButton');
+
+    // Function to close modal
+    function closeModal() {
+        modalOverlay.style.display = 'none';
+    }
+
+    // Show modal when page loads
+    modalOverlay.style.display = 'block';
+
+    // Close button event listener
+    closeButton.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    // Optional: Add escape key listener to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+});

@@ -6,7 +6,7 @@
 
 ### Requerimientos Generales del Sitio Web
 
-- [ ] Crear un sitio web visualmente atractivo, sencillo y funcional.
+- [X] Crear un sitio web visualmente atractivo, sencillo y funcional.
 - [X] Diseñar con enfoque **mobile-first**, ya que la mayoría de los usuarios accederán al sitio desde dispositivos móviles.
 - [X] Asegurarse de que el sitio contenga al menos 3 páginas:
   - **Página de Inicio (Landing Page)**:
@@ -31,19 +31,19 @@
 
 - **Reservas y Gestión de Habitaciones**:
   - [X] Permitir que solo los **usuarios registrados** puedan hacer y cancelar reservas.
-  - [ ] En la página de reservas, mostrar:
+  - [X] En la página de reservas, mostrar:
     - [X] Habitaciones disponibles que coincidan con los filtros (fechas, número de personas).
     - [X] Detalle del precio, incluyendo número de noches y número de personas.
   - [X] Mostrar información clara sobre la **hora de check-in** (14:00) y **política de expiración de la reserva** (si la reserva no es efectiva antes de las 16:00, la habitación se liberará).
   - [X] Asegurarse de que después de hacer clic en "Reservar", el sistema verifique si la habitación sigue disponible:
     - [X] Si está disponible, proceder con la reserva.
     - [X] Si no está disponible, notificar al usuario que la habitación ya no está disponible.
-  - [ ] Permitir que los usuarios **cancelen** una reserva de forma sencilla.
-  - [ ] Proveer información clara sobre la **política de cancelación** de reservas del hotel.
+  - [X] Permitir que los usuarios **cancelen** una reserva de forma sencilla.
+  - [X] Proveer información clara sobre la **política de cancelación** de reservas del hotel.
 
 ### Funcionalidades Adicionales
 
-- [ ] Asegurar que el sitio sea fácil de usar y **responsivo** en todos los dispositivos, no solo móviles.
+- [X] Asegurar que el sitio sea fácil de usar y **responsivo** en todos los dispositivos, no solo móviles.
 - [X] Proveer una **interfaz intuitiva** y fácil de usar para la búsqueda de disponibilidad y la realización de reservas.
 - [X] Utilizar **json-server** para la persistencia de datos y el manejo de reservas.
 - [X] Hospedar y desplegar el sitio web en **GitHub Pages**.
