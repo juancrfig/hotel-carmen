@@ -357,3 +357,48 @@ button {
 .nextTwo {
     right: 10px;
 }
+
+
+@media (min-width: 580px) {
+
+    #inicio {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    #hotel-logo {
+        display: none;
+    }
+
+    #inicio p:last-child {
+        width: 600px;
+    }
+
+    .gallery-container {
+        width: 50vw;
+        height: 1200px;
+    }
+    
+    .gallery-container-two {
+        width: 50vw;
+        height: 800px;
+    }
+
+    .gallery img,
+    .galleryTwo img {
+    width: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+
+
+} 
+
+
+/*  MINOR FIXES */
+
