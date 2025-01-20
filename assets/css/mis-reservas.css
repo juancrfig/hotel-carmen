@@ -17,8 +17,9 @@ body {
     font-family: Orbitron;
     color: whitesmoke;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
 }
 
 
@@ -34,3 +35,13 @@ section {
     padding: 2em;
 }
 
+.comeback-home {
+    color: var(--sunset);
+    font-size: 2rem;
+    position: absolute;
+}
+
+.comebackhome-box {
+    height: 40px;
+    width: 40px;
+}

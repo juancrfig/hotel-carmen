@@ -19,7 +19,7 @@ if (window.location.pathname.includes("reservas.html")) {
 
     reservarBtnElm.addEventListener('click', () => {
 
-        reservarHabitacion(startingDateInput.value, leavingDateInput.value)
+        reservarHabitacion(startingDateInput.value, leavingDateInput.value, sessionStorage.getItem('username'))
         
     })
 

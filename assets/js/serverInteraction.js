@@ -299,7 +299,7 @@ function renderCalendar(roomData) {
 let roomID = 1;
 
 
-export function reservarHabitacion(startDate, endDate) {
+export function reservarHabitacion(startDate, endDate, username) {
   
     // Step 1: Fetch room details
     fetch(`${serverURL}/bedrooms/${roomID}`)
@@ -320,7 +320,7 @@ export function reservarHabitacion(startDate, endDate) {
         const reservationDetails = {
           reserved: {
             status: true,
-            date: [[startDate, endDate]] // Add new reservation
+            date: [[startDate, endDate, username]] // Add new reservation
           }
         };
   
